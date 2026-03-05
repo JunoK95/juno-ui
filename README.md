@@ -8,12 +8,6 @@ A lightweight React component library with a token-based theme system and built-
 npm install juno-ui-library
 ```
 
-Import the stylesheet once at your app root:
-
-```ts
-import 'juno-ui-library/dist/juno-ui-library.css'
-```
-
 ## Usage
 
 ```tsx
@@ -59,7 +53,7 @@ The library uses CSS custom properties. Light mode is the default; dark mode act
 
 ### Overriding tokens
 
-Override any token after importing the stylesheet:
+Override any token in your own stylesheet:
 
 ```css
 :root {
