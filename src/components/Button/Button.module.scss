@@ -1,0 +1,125 @@
+// ─── Component-scoped color variables ─────────────────────────────────────────
+// Intent classes set these; variant classes consume them.
+// This lets every intent × variant combo work with zero extra SCSS.
+
+.intentDefault {
+  --btn-bg:           var(--color-accent);
+  --btn-bg-hover:     var(--color-accent-hover);
+  --btn-fg:           var(--color-text-on-accent);
+  --btn-text:         var(--color-text);
+  --btn-subtle:       var(--color-subtle);
+  --btn-subtle-hover: var(--color-subtle-hover);
+  --btn-border:       var(--color-border-strong);
+}
+
+.intentPrimary {
+  --btn-bg:           var(--color-primary);
+  --btn-bg-hover:     var(--color-primary-hover);
+  --btn-fg:           var(--color-primary-fg);
+  --btn-text:         var(--color-primary);
+  --btn-subtle:       var(--color-primary-subtle);
+  --btn-subtle-hover: var(--color-primary-subtle-hover);
+  --btn-border:       var(--color-primary-border);
+}
+
+.intentDanger {
+  --btn-bg:           var(--color-danger);
+  --btn-bg-hover:     var(--color-danger-hover);
+  --btn-fg:           var(--color-danger-fg);
+  --btn-text:         var(--color-danger);
+  --btn-subtle:       var(--color-danger-subtle);
+  --btn-subtle-hover: var(--color-danger-subtle-hover);
+  --btn-border:       var(--color-danger-border);
+}
+
+.intentSuccess {
+  --btn-bg:           var(--color-success);
+  --btn-bg-hover:     var(--color-success-hover);
+  --btn-fg:           var(--color-success-fg);
+  --btn-text:         var(--color-success);
+  --btn-subtle:       var(--color-success-subtle);
+  --btn-subtle-hover: var(--color-success-subtle-hover);
+  --btn-border:       var(--color-success-border);
+}
+
+.intentWarning {
+  --btn-bg:           var(--color-warning);
+  --btn-bg-hover:     var(--color-warning-hover);
+  --btn-fg:           var(--color-warning-fg);
+  --btn-text:         var(--color-warning);
+  --btn-subtle:       var(--color-warning-subtle);
+  --btn-subtle-hover: var(--color-warning-subtle-hover);
+  --btn-border:       var(--color-warning-border);
+}
+
+// ─── Base ─────────────────────────────────────────────────────────────────────
+
+$radius: 6px;
+$transition: 0.15s ease;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: $radius;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color $transition, color $transition,
+    border-color $transition, opacity $transition;
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+}
+
+// ─── Variants ─────────────────────────────────────────────────────────────────
+
+.solid {
+  background-color: var(--btn-bg);
+  color: var(--btn-fg);
+
+  &:hover:not(:disabled) {
+    background-color: var(--btn-bg-hover);
+  }
+}
+
+.outline {
+  background-color: transparent;
+  color: var(--btn-text);
+  border: 1.5px solid var(--btn-border);
+
+  &:hover:not(:disabled) {
+    background-color: var(--btn-subtle);
+  }
+}
+
+.ghost {
+  background-color: transparent;
+  color: var(--btn-text);
+
+  &:hover:not(:disabled) {
+    background-color: var(--btn-subtle);
+  }
+}
+
+// ─── Sizes ────────────────────────────────────────────────────────────────────
+
+.sm {
+  padding: 6px 12px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.md {
+  padding: 8px 16px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.lg {
+  padding: 12px 24px;
+  font-size: 16px;
+  line-height: 1.5;
+}
