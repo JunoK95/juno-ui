@@ -1,19 +1,16 @@
+import { useEffect } from 'react'
 import type { Decorator, Preview } from '@storybook/react'
 import '../src/index.scss'
 
-// Wrap every story with a themed container so [data-theme] tokens apply
 const withTheme: Decorator = (Story, context) => {
   const theme = context.globals?.theme ?? 'light'
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+  }, [theme])
+
   return (
-    <div
-      data-theme={theme}
-      style={{
-        minHeight: '100vh',
-        padding: '32px',
-        backgroundColor: 'var(--color-bg)',
-        color: 'var(--color-text)',
-      }}
-    >
+    <div style={{ padding: '32px' }}>
       <Story />
     </div>
   )
@@ -22,10 +19,13 @@ const withTheme: Decorator = (Story, context) => {
 const preview: Preview = {
   decorators: [withTheme],
 
+  initialGlobals: {
+    theme: 'light',
+  },
+
   globalTypes: {
     theme: {
       description: 'Color theme',
-      defaultValue: 'light',
       toolbar: {
         title: 'Theme',
         icon: 'circlehollow',

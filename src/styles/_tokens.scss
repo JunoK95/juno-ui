@@ -168,10 +168,10 @@
   --color-warning-border:       var(--amber-500);
 }
 
-:root                { @include light-tokens; }
-[data-theme="light"] { @include light-tokens; }
+:root                     { @include light-tokens; }
+html[data-theme="light"]  { @include light-tokens; }
 
 @media (prefers-color-scheme: dark) {
   :root { @include dark-tokens; }
 }
-[data-theme="dark"] { @include dark-tokens; }
+html[data-theme="dark"] { @include dark-tokens; }
