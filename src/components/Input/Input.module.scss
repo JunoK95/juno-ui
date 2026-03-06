@@ -1,0 +1,110 @@
+// ─── Intent variables ─────────────────────────────────────────────────────────
+// Wrapper sets these; input/hint consume them.
+
+.intentDefault {
+  --input-border:       var(--color-border);
+  --input-border-focus: var(--color-primary);
+  --input-ring:         var(--color-primary-subtle);
+  --input-hint:         var(--color-text-muted);
+}
+
+.intentDanger {
+  --input-border:       var(--color-danger-border);
+  --input-border-focus: var(--color-danger);
+  --input-ring:         var(--color-danger-subtle);
+  --input-hint:         var(--color-danger);
+}
+
+.intentSuccess {
+  --input-border:       var(--color-success-border);
+  --input-border-focus: var(--color-success);
+  --input-ring:         var(--color-success-subtle);
+  --input-hint:         var(--color-success);
+}
+
+.intentWarning {
+  --input-border:       var(--color-warning-border);
+  --input-border-focus: var(--color-warning);
+  --input-ring:         var(--color-warning-subtle);
+  --input-hint:         var(--color-warning);
+}
+
+// ─── Wrapper ──────────────────────────────────────────────────────────────────
+
+.wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+// ─── Label ────────────────────────────────────────────────────────────────────
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+// ─── Input ────────────────────────────────────────────────────────────────────
+
+$radius: 6px;
+$transition: 0.15s ease;
+
+.input {
+  display: block;
+  width: 100%;
+  border: 1.5px solid var(--input-border);
+  border-radius: $radius;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-family: inherit;
+  outline: none;
+  transition: border-color $transition, box-shadow $transition;
+
+  &::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  &:hover:not(:disabled):not(:focus) {
+    border-color: var(--color-border-strong);
+  }
+
+  &:focus {
+    border-color: var(--input-border-focus);
+    box-shadow: 0 0 0 3px var(--input-ring);
+  }
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    background-color: var(--color-subtle);
+  }
+}
+
+// ─── Sizes ────────────────────────────────────────────────────────────────────
+
+.sm {
+  padding: 5px 10px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.md {
+  padding: 7px 12px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.lg {
+  padding: 10px 16px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+// ─── Hint ─────────────────────────────────────────────────────────────────────
+
+.hint {
+  font-size: 12px;
+  color: var(--input-hint);
+  margin: 0;
+}

@@ -8,8 +8,8 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types":   "./dist/index.d.ts",
-      "import":  "./dist/juno-ui-library.js",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/juno-ui-library.js",
       "require": "./dist/juno-ui-library.umd.cjs"
     }
   },
@@ -41,6 +41,7 @@
     "globals": "^16.5.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-router-dom": "^7.13.1",
     "sass": "^1.97.3",
     "storybook": "^10.2.15",
     "typescript": "~5.9.3",
