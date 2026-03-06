@@ -4,7 +4,7 @@ import styles from './Input.module.scss'
 export type InputSize = 'sm' | 'md' | 'lg'
 export type InputIntent = 'default' | 'danger' | 'success' | 'warning'
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
   size?: InputSize
   intent?: InputIntent
   label?: string
