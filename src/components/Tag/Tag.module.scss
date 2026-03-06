@@ -1,0 +1,94 @@
+// ─── Intent variables ─────────────────────────────────────────────────────────
+
+.intentDefault {
+  --tag-subtle-bg: var(--color-subtle);
+  --tag-fg:        var(--color-text-secondary);
+  --tag-solid-bg:  var(--color-accent);
+  --tag-solid-fg:  var(--color-text-on-accent);
+  --tag-border:    var(--color-border-strong);
+}
+
+.intentPrimary {
+  --tag-subtle-bg: var(--color-primary-subtle);
+  --tag-fg:        var(--color-primary);
+  --tag-solid-bg:  var(--color-primary);
+  --tag-solid-fg:  var(--color-primary-fg);
+  --tag-border:    var(--color-primary-border);
+}
+
+.intentDanger {
+  --tag-subtle-bg: var(--color-danger-subtle);
+  --tag-fg:        var(--color-danger);
+  --tag-solid-bg:  var(--color-danger);
+  --tag-solid-fg:  var(--color-danger-fg);
+  --tag-border:    var(--color-danger-border);
+}
+
+.intentSuccess {
+  --tag-subtle-bg: var(--color-success-subtle);
+  --tag-fg:        var(--color-success);
+  --tag-solid-bg:  var(--color-success);
+  --tag-solid-fg:  var(--color-success-fg);
+  --tag-border:    var(--color-success-border);
+}
+
+.intentWarning {
+  --tag-subtle-bg: var(--color-warning-subtle);
+  --tag-fg:        var(--color-warning);
+  --tag-solid-bg:  var(--color-warning);
+  --tag-solid-fg:  var(--color-warning-fg);
+  --tag-border:    var(--color-warning-border);
+}
+
+// ─── Base ─────────────────────────────────────────────────────────────────────
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+// ─── Variants ─────────────────────────────────────────────────────────────────
+
+.subtle {
+  background: var(--tag-subtle-bg);
+  color: var(--tag-fg);
+}
+
+.solid {
+  background: var(--tag-solid-bg);
+  color: var(--tag-solid-fg);
+}
+
+.outline {
+  background: transparent;
+  color: var(--tag-fg);
+  border-color: var(--tag-border);
+}
+
+// ─── Remove button ────────────────────────────────────────────────────────────
+
+.remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.6;
+  border-radius: 2px;
+  transition: opacity 0.12s ease;
+
+  &:hover {
+    opacity: 1;
+  }
+}

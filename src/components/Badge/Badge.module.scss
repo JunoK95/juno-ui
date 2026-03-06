@@ -1,0 +1,74 @@
+// ─── Intent variables ─────────────────────────────────────────────────────────
+
+.intentDefault {
+  --badge-subtle-bg: var(--color-subtle);
+  --badge-fg:        var(--color-text-secondary);
+  --badge-solid-bg:  var(--color-accent);
+  --badge-solid-fg:  var(--color-text-on-accent);
+  --badge-border:    var(--color-border-strong);
+}
+
+.intentPrimary {
+  --badge-subtle-bg: var(--color-primary-subtle);
+  --badge-fg:        var(--color-primary);
+  --badge-solid-bg:  var(--color-primary);
+  --badge-solid-fg:  var(--color-primary-fg);
+  --badge-border:    var(--color-primary-border);
+}
+
+.intentDanger {
+  --badge-subtle-bg: var(--color-danger-subtle);
+  --badge-fg:        var(--color-danger);
+  --badge-solid-bg:  var(--color-danger);
+  --badge-solid-fg:  var(--color-danger-fg);
+  --badge-border:    var(--color-danger-border);
+}
+
+.intentSuccess {
+  --badge-subtle-bg: var(--color-success-subtle);
+  --badge-fg:        var(--color-success);
+  --badge-solid-bg:  var(--color-success);
+  --badge-solid-fg:  var(--color-success-fg);
+  --badge-border:    var(--color-success-border);
+}
+
+.intentWarning {
+  --badge-subtle-bg: var(--color-warning-subtle);
+  --badge-fg:        var(--color-warning);
+  --badge-solid-bg:  var(--color-warning);
+  --badge-solid-fg:  var(--color-warning-fg);
+  --badge-border:    var(--color-warning-border);
+}
+
+// ─── Base ─────────────────────────────────────────────────────────────────────
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+// ─── Variants ─────────────────────────────────────────────────────────────────
+
+.subtle {
+  background: var(--badge-subtle-bg);
+  color: var(--badge-fg);
+}
+
+.solid {
+  background: var(--badge-solid-bg);
+  color: var(--badge-solid-fg);
+}
+
+.outline {
+  background: transparent;
+  color: var(--badge-fg);
+  border-color: var(--badge-border);
+}

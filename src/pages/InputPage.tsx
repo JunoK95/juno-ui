@@ -1,5 +1,6 @@
 import { Input } from '../index'
 import type { InputIntent } from '../index'
+import { PageHeader } from '../layout/PageHeader'
 import s from '../App.module.scss'
 
 const intents: InputIntent[] = ['default', 'danger', 'success', 'warning']
@@ -14,15 +15,14 @@ const intentHints: Record<InputIntent, string> = {
 export function InputPage() {
   return (
     <>
-      <h1 className={s.pageTitle}>Input</h1>
-      <p className={s.pageDesc}>Accepts text input from the user.</p>
+      <PageHeader title="Input" desc="Accepts text input from the user." storybook="components-input" />
 
       <div className={s.section}>
         <p className={s.sectionTitle}>Sizes</p>
         <div className={s.canvas}>
-          <Input size="sm" placeholder="Small" style={{ width: '200px' }} />
+          <Input size="sm" placeholder="Small"  style={{ width: '200px' }} />
           <Input size="md" placeholder="Medium" style={{ width: '200px' }} />
-          <Input size="lg" placeholder="Large" style={{ width: '200px' }} />
+          <Input size="lg" placeholder="Large"  style={{ width: '200px' }} />
         </div>
       </div>
 

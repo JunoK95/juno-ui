@@ -301,6 +301,43 @@ $bp: 768px;
 
 // ─── Component page ───────────────────────────────────────────────────────────
 
+.pageHeaderRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.storybookLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 4px;
+  transition: color 0.12s ease, border-color 0.12s ease, background-color 0.12s ease;
+
+  &:hover {
+    color: var(--color-text);
+    border-color: var(--color-border-strong);
+    background-color: var(--color-subtle);
+  }
+}
+
+.pageHeaderDesc {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
 .pageTitle {
   font-size: 22px;
   font-weight: 700;

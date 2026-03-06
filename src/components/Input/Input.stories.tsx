@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Input } from './Input'
-import type { InputIntent, InputSize } from './Input'
+
 
 const meta: Meta<typeof Input> = {
   title: 'Components/Input',
   component: Input,
   argTypes: {
-    size:     { control: 'select', options: ['sm', 'md', 'lg'] satisfies InputSize[] },
-    intent:   { control: 'select', options: ['default', 'danger', 'success', 'warning'] satisfies InputIntent[] },
+    size:     { control: 'select', options: ['sm', 'md', 'lg'] },
+    intent:   { control: 'select', options: ['default', 'danger', 'success', 'warning'] },
     label:    { control: 'text' },
     hint:     { control: 'text' },
     disabled: { control: 'boolean' },

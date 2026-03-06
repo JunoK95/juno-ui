@@ -1,0 +1,145 @@
+// ─── Intent variables ─────────────────────────────────────────────────────────
+
+.intentDefault {
+  --chk-fill:   var(--color-accent);
+  --chk-border: var(--color-border-strong);
+  --chk-check:  var(--color-text-on-accent);
+  --chk-ring:   var(--color-primary-subtle);
+}
+
+.intentPrimary {
+  --chk-fill:   var(--color-primary);
+  --chk-border: var(--color-border);
+  --chk-check:  var(--color-primary-fg);
+  --chk-ring:   var(--color-primary-subtle);
+}
+
+.intentDanger {
+  --chk-fill:   var(--color-danger);
+  --chk-border: var(--color-danger-border);
+  --chk-check:  var(--color-danger-fg);
+  --chk-ring:   var(--color-danger-subtle);
+}
+
+.intentSuccess {
+  --chk-fill:   var(--color-success);
+  --chk-border: var(--color-success-border);
+  --chk-check:  var(--color-success-fg);
+  --chk-ring:   var(--color-success-subtle);
+}
+
+.intentWarning {
+  --chk-fill:   var(--color-warning);
+  --chk-border: var(--color-warning-border);
+  --chk-check:  var(--color-warning-fg);
+  --chk-ring:   var(--color-warning-subtle);
+}
+
+// ─── Wrapper ──────────────────────────────────────────────────────────────────
+
+.wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.row {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+// ─── Checkbox element ─────────────────────────────────────────────────────────
+
+$transition: 0.12s ease;
+
+.checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  flex-shrink: 0;
+  border: 1.5px solid var(--chk-border);
+  border-radius: 4px;
+  background: var(--color-surface);
+  cursor: pointer;
+  position: relative;
+  transition: background $transition, border-color $transition, box-shadow $transition;
+
+  &:checked {
+    background: var(--chk-fill);
+    border-color: var(--chk-fill);
+
+    &::after {
+      content: '';
+      position: absolute;
+      border: 1.5px solid var(--chk-check);
+      border-top: none;
+      border-left: none;
+      transform: rotate(42deg);
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--chk-ring);
+  }
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+}
+
+// ─── Sizes ────────────────────────────────────────────────────────────────────
+
+.sm {
+  width: 14px;
+  height: 14px;
+
+  &:checked::after {
+    left: 3px;
+    top: 0px;
+    width: 4px;
+    height: 8px;
+  }
+}
+
+.md {
+  width: 16px;
+  height: 16px;
+
+  &:checked::after {
+    left: 4px;
+    top: 1px;
+    width: 5px;
+    height: 9px;
+  }
+}
+
+.lg {
+  width: 18px;
+  height: 18px;
+
+  &:checked::after {
+    left: 5px;
+    top: 1px;
+    width: 6px;
+    height: 10px;
+    border-width: 2px;
+  }
+}
+
+// ─── Label & hint ─────────────────────────────────────────────────────────────
+
+.labelText {
+  font-size: 14px;
+  color: var(--color-text);
+  user-select: none;
+}
+
+.hint {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin: 0;
+  padding-left: 24px;
+}

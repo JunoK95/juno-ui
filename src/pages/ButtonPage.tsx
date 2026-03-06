@@ -1,5 +1,6 @@
 import { Button } from '../index'
 import type { ButtonIntent, ButtonVariant } from '../index'
+import { PageHeader } from '../layout/PageHeader'
 import s from '../App.module.scss'
 
 const intents: ButtonIntent[] = ['default', 'primary', 'danger', 'success', 'warning']
@@ -8,8 +9,7 @@ const variants: ButtonVariant[] = ['solid', 'outline', 'ghost']
 export function ButtonPage() {
   return (
     <>
-      <h1 className={s.pageTitle}>Button</h1>
-      <p className={s.pageDesc}>Triggers an action or event.</p>
+      <PageHeader title="Button" desc="Triggers an action or event." storybook="components-button" />
 
       <div className={s.section}>
         <p className={s.sectionTitle}>Variants × Intents</p>

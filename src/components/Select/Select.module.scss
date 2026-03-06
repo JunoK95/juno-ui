@@ -1,0 +1,127 @@
+// ─── Intent variables ─────────────────────────────────────────────────────────
+
+.intentDefault {
+  --sel-border:       var(--color-border);
+  --sel-border-focus: var(--color-primary);
+  --sel-ring:         var(--color-primary-subtle);
+  --sel-hint:         var(--color-text-muted);
+}
+
+.intentDanger {
+  --sel-border:       var(--color-danger-border);
+  --sel-border-focus: var(--color-danger);
+  --sel-ring:         var(--color-danger-subtle);
+  --sel-hint:         var(--color-danger);
+}
+
+.intentSuccess {
+  --sel-border:       var(--color-success-border);
+  --sel-border-focus: var(--color-success);
+  --sel-ring:         var(--color-success-subtle);
+  --sel-hint:         var(--color-success);
+}
+
+.intentWarning {
+  --sel-border:       var(--color-warning-border);
+  --sel-border-focus: var(--color-warning);
+  --sel-ring:         var(--color-warning-subtle);
+  --sel-hint:         var(--color-warning);
+}
+
+// ─── Wrapper ──────────────────────────────────────────────────────────────────
+
+.wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+// ─── Select container ─────────────────────────────────────────────────────────
+
+.selectWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  position: absolute;
+  right: 10px;
+  color: var(--color-text-muted);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+// ─── Select element ───────────────────────────────────────────────────────────
+
+$radius: 6px;
+$transition: 0.15s ease;
+
+.select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  border: 1.5px solid var(--sel-border);
+  border-radius: $radius;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-family: inherit;
+  outline: none;
+  cursor: pointer;
+  padding-right: 30px;
+  transition: border-color $transition, box-shadow $transition;
+
+  &:hover:not(:disabled):not(:focus) {
+    border-color: var(--color-border-strong);
+  }
+
+  &:focus {
+    border-color: var(--sel-border-focus);
+    box-shadow: 0 0 0 3px var(--sel-ring);
+  }
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    background-color: var(--color-subtle);
+  }
+
+  option {
+    background: var(--color-surface);
+    color: var(--color-text);
+  }
+}
+
+// ─── Sizes ────────────────────────────────────────────────────────────────────
+
+.sm {
+  padding: 5px 10px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.md {
+  padding: 7px 12px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.lg {
+  padding: 10px 16px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+// ─── Hint ─────────────────────────────────────────────────────────────────────
+
+.hint {
+  font-size: 12px;
+  color: var(--sel-hint);
+  margin: 0;
+}

@@ -1,0 +1,87 @@
+// ─── Intent variables ─────────────────────────────────────────────────────────
+
+.intentDefault {
+  --alert-bg:     var(--color-subtle);
+  --alert-border: var(--color-border-strong);
+  --alert-icon:   var(--color-text-secondary);
+}
+
+.intentPrimary {
+  --alert-bg:     var(--color-primary-subtle);
+  --alert-border: var(--color-primary-border);
+  --alert-icon:   var(--color-primary);
+}
+
+.intentDanger {
+  --alert-bg:     var(--color-danger-subtle);
+  --alert-border: var(--color-danger-border);
+  --alert-icon:   var(--color-danger);
+}
+
+.intentSuccess {
+  --alert-bg:     var(--color-success-subtle);
+  --alert-border: var(--color-success-border);
+  --alert-icon:   var(--color-success);
+}
+
+.intentWarning {
+  --alert-bg:     var(--color-warning-subtle);
+  --alert-border: var(--color-warning-border);
+  --alert-icon:   var(--color-warning);
+}
+
+// ─── Alert ────────────────────────────────────────────────────────────────────
+
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--alert-bg);
+  border: 1px solid var(--alert-border);
+  border-radius: 8px;
+  width: 100%;
+}
+
+.icon {
+  color: var(--alert-icon);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.body {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 2px;
+}
+
+.content {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.dismiss {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 2px;
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: color 0.12s ease, background-color 0.12s ease;
+
+  &:hover {
+    color: var(--color-text);
+    background-color: var(--color-subtle-hover);
+  }
+}
