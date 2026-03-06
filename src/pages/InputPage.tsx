@@ -28,7 +28,7 @@ export function InputPage() {
 
       <div className={s.section}>
         <p className={s.sectionTitle}>Intents</p>
-        <div className={s.canvas} style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
+        <div className={s.canvas} style={{ flexDirection: 'column', alignItems: 'stretch' }}>
           {intents.map(intent => (
             <Input
               key={intent}
@@ -36,7 +36,7 @@ export function InputPage() {
               label={intent.charAt(0).toUpperCase() + intent.slice(1)}
               hint={intentHints[intent]}
               placeholder="Enter a value…"
-              style={{ width: '280px' }}
+              style={{ width: '100%' }}
             />
           ))}
         </div>

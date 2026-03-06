@@ -25,12 +25,16 @@ export function Input({
   hint,
   id,
   className,
+  style,
   ...props
 }: InputProps) {
   const inputId = id ?? (label ? label.toLowerCase().replace(/\s+/g, '-') : undefined)
 
   return (
-    <div className={[styles.wrapper, intentClass[intent], className].filter(Boolean).join(' ')}>
+    <div
+      className={[styles.wrapper, intentClass[intent], className].filter(Boolean).join(' ')}
+      style={style}
+    >
       {label && <label className={styles.label} htmlFor={inputId}>{label}</label>}
       <input id={inputId} className={[styles.input, styles[size]].join(' ')} {...props} />
       {hint && <p className={styles.hint}>{hint}</p>}
