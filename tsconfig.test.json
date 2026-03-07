@@ -2,11 +2,19 @@
   "extends": "./tsconfig.app.json",
   "compilerOptions": {
     "types": ["jest", "@testing-library/jest-dom"],
-    "moduleResolution": "node",
     "allowImportingTsExtensions": false,
     "verbatimModuleSyntax": false,
-    "noEmit": false,
+    "noEmit": true,
+    "composite": true,
     "esModuleInterop": true
   },
-  "include": ["src", "jest.setup.ts", "jest.config.ts"]
+  "include": [
+    "src/**/*.d.ts",
+    "src/**/__tests__/**/*.ts",
+    "src/**/__tests__/**/*.tsx",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx",
+    "jest.setup.ts",
+    "jest.config.ts"
+  ]
 }

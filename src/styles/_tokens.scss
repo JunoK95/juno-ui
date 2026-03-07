@@ -168,10 +168,155 @@
   --color-warning-border:       var(--amber-500);
 }
 
-:root                     { @include light-tokens; }
-html[data-theme="light"]  { @include light-tokens; }
+@mixin warm-tokens {
+  // Surfaces — cream/parchment
+  --color-bg:      #fef9f0;
+  --color-surface: #fffcf6;
 
-@media (prefers-color-scheme: dark) {
-  :root { @include dark-tokens; }
+  // Borders — warm gray
+  --color-border:        #e8d8c4;
+  --color-border-strong: #d0bea4;
+
+  // Text — warm dark brown
+  --color-text:           #2d1f0e;
+  --color-text-secondary: #78644e;
+  --color-text-muted:     #b09878;
+  --color-text-on-accent: #ffffff;
+
+  // Neutral interactive
+  --color-accent:       #2d1f0e;
+  --color-accent-hover: #4a3828;
+  --color-subtle:       #f5ece0;
+  --color-subtle-hover: #ede0d0;
+
+  // Intent — same hues as light, slightly warmer reads on warm bg
+  --color-primary:              var(--blue-600);
+  --color-primary-hover:        var(--blue-700);
+  --color-primary-fg:           var(--gray-0);
+  --color-primary-subtle:       #eef4ff;
+  --color-primary-subtle-hover: var(--blue-100);
+  --color-primary-border:       var(--blue-600);
+
+  --color-danger:               var(--red-600);
+  --color-danger-hover:         var(--red-700);
+  --color-danger-fg:            var(--gray-0);
+  --color-danger-subtle:        #fff0f0;
+  --color-danger-subtle-hover:  var(--red-100);
+  --color-danger-border:        var(--red-600);
+
+  --color-success:              var(--green-600);
+  --color-success-hover:        var(--green-700);
+  --color-success-fg:           var(--gray-0);
+  --color-success-subtle:       #f0fdf4;
+  --color-success-subtle-hover: var(--green-100);
+  --color-success-border:       var(--green-600);
+
+  --color-warning:              var(--amber-600);
+  --color-warning-hover:        var(--amber-700);
+  --color-warning-fg:           var(--gray-0);
+  --color-warning-subtle:       #fef9e8;
+  --color-warning-subtle-hover: var(--amber-100);
+  --color-warning-border:       var(--amber-600);
 }
-html[data-theme="dark"] { @include dark-tokens; }
+
+@mixin dim-tokens {
+  // Surfaces — dark blue-gray (softer than pure dark)
+  --color-bg:      #16181f;
+  --color-surface: #1e2029;
+
+  // Borders — blue-tinted dark
+  --color-border:        #2c2f3e;
+  --color-border-strong: #3d4158;
+
+  // Text — cool blue-white
+  --color-text:           #e4e6f2;
+  --color-text-secondary: #9297b0;
+  --color-text-muted:     #5e6280;
+  --color-text-on-accent: #ffffff;
+
+  // Neutral interactive
+  --color-accent:       #e4e6f2;
+  --color-accent-hover: #c8cae0;
+  --color-subtle:       #252836;
+  --color-subtle-hover: #2e3245;
+
+  // Intent — same values as dark theme
+  --color-primary:              var(--blue-500);
+  --color-primary-hover:        var(--blue-400);
+  --color-primary-fg:           var(--gray-0);
+  --color-primary-subtle:       var(--blue-950);
+  --color-primary-subtle-hover: var(--blue-900);
+  --color-primary-border:       var(--blue-500);
+
+  --color-danger:               var(--red-500);
+  --color-danger-hover:         var(--red-400);
+  --color-danger-fg:            var(--gray-0);
+  --color-danger-subtle:        var(--red-950);
+  --color-danger-subtle-hover:  var(--red-900);
+  --color-danger-border:        var(--red-500);
+
+  --color-success:              var(--green-500);
+  --color-success-hover:        var(--green-400);
+  --color-success-fg:           var(--green-950);
+  --color-success-subtle:       var(--green-950);
+  --color-success-subtle-hover: var(--green-900);
+  --color-success-border:       var(--green-500);
+
+  --color-warning:              var(--amber-500);
+  --color-warning-hover:        var(--amber-400);
+  --color-warning-fg:           var(--amber-950);
+  --color-warning-subtle:       var(--amber-950);
+  --color-warning-subtle-hover: var(--amber-900);
+  --color-warning-border:       var(--amber-500);
+}
+
+@mixin mono-tokens {
+  // Surfaces — pure white, stark
+  --color-bg:      #ffffff;
+  --color-surface: #ffffff;
+
+  // Borders — hard black
+  --color-border:        #d0d0d0;
+  --color-border-strong: #111111;
+
+  // Text — pure black
+  --color-text:           #000000;
+  --color-text-secondary: #444444;
+  --color-text-muted:     #888888;
+  --color-text-on-accent: #ffffff;
+
+  // Neutral interactive
+  --color-accent:       #000000;
+  --color-accent-hover: #333333;
+  --color-subtle:       #f2f2f2;
+  --color-subtle-hover: #e4e4e4;
+
+  // All intents are grayscale — differentiated by lightness only
+  --color-primary:              #111111;
+  --color-primary-hover:        #333333;
+  --color-primary-fg:           #ffffff;
+  --color-primary-subtle:       #f0f0f0;
+  --color-primary-subtle-hover: #e2e2e2;
+  --color-primary-border:       #111111;
+
+  --color-danger:               #555555;
+  --color-danger-hover:         #333333;
+  --color-danger-fg:            #ffffff;
+  --color-danger-subtle:        #f5f5f5;
+  --color-danger-subtle-hover:  #e8e8e8;
+  --color-danger-border:        #555555;
+
+  --color-success:              #777777;
+  --color-success-hover:        #555555;
+  --color-success-fg:           #ffffff;
+  --color-success-subtle:       #f8f8f8;
+  --color-success-subtle-hover: #eeeeee;
+  --color-success-border:       #777777;
+
+  --color-warning:              #aaaaaa;
+  --color-warning-hover:        #888888;
+  --color-warning-fg:           #ffffff;
+  --color-warning-subtle:       #fafafa;
+  --color-warning-subtle-hover: #f0f0f0;
+  --color-warning-border:       #aaaaaa;
+}

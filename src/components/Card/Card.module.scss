@@ -1,0 +1,91 @@
+// ─── Color variables ──────────────────────────────────────────────────────────
+
+.colorDefault {
+  --card-bg:        var(--color-surface);
+  --card-tinted-bg: var(--color-subtle);
+  --card-border:    var(--color-border);
+  --card-footer-bg: var(--color-subtle);
+}
+
+.colorPrimary {
+  --card-bg:        var(--color-primary-subtle);
+  --card-tinted-bg: var(--color-primary-subtle);
+  --card-border:    var(--color-primary-border);
+  --card-footer-bg: var(--color-primary-subtle);
+}
+
+.colorDanger {
+  --card-bg:        var(--color-danger-subtle);
+  --card-tinted-bg: var(--color-danger-subtle);
+  --card-border:    var(--color-danger-border);
+  --card-footer-bg: var(--color-danger-subtle);
+}
+
+.colorSuccess {
+  --card-bg:        var(--color-success-subtle);
+  --card-tinted-bg: var(--color-success-subtle);
+  --card-border:    var(--color-success-border);
+  --card-footer-bg: var(--color-success-subtle);
+}
+
+.colorWarning {
+  --card-bg:        var(--color-warning-subtle);
+  --card-tinted-bg: var(--color-warning-subtle);
+  --card-border:    var(--color-warning-border);
+  --card-footer-bg: var(--color-warning-subtle);
+}
+
+// ─── Base ─────────────────────────────────────────────────────────────────────
+
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+}
+
+// ─── Variants ─────────────────────────────────────────────────────────────────
+
+.elevated {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.outline {
+  background: var(--color-surface);
+  border: 1px solid var(--card-border);
+}
+
+.subtle {
+  background: var(--card-tinted-bg);
+  border: 1px solid var(--card-border);
+}
+
+.flat {
+  background: var(--card-tinted-bg);
+}
+
+// ─── Sections ─────────────────────────────────────────────────────────────────
+
+.header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--card-border);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.body {
+  padding: 20px;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.footer {
+  padding: 12px 20px;
+  border-top: 1px solid var(--card-border);
+  background: var(--card-footer-bg);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}

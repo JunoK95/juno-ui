@@ -1,0 +1,483 @@
+// ─── Color palettes ────────────────────────────────────────────────────────────
+// Applied via data-palette attribute on <html>.
+// All palettes override intent tokens only — surface/text/border tokens from
+// the active light/dark theme continue to apply unchanged.
+// ──────────────────────────────────────────────────────────────────────────────
+
+// ─── Pastel ───────────────────────────────────────────────────────────────────
+// Soft lavender, rose, teal, peach. Less saturated, warmer-feeling accents.
+
+@mixin palette-pastel-light {
+  --color-primary:              #7c7ae8;
+  --color-primary-hover:        #6362d0;
+  --color-primary-fg:           #ffffff;
+  --color-primary-subtle:       #f0f0fd;
+  --color-primary-subtle-hover: #e1e1fb;
+  --color-primary-border:       #a8a7f0;
+
+  --color-danger:               #e879a0;
+  --color-danger-hover:         #d45e88;
+  --color-danger-fg:            #ffffff;
+  --color-danger-subtle:        #fdf2f7;
+  --color-danger-subtle-hover:  #fbe4ef;
+  --color-danger-border:        #f0a8c7;
+
+  --color-success:              #2dbfa0;
+  --color-success-hover:        #24a089;
+  --color-success-fg:           #ffffff;
+  --color-success-subtle:       #edfaf7;
+  --color-success-subtle-hover: #d4f3ed;
+  --color-success-border:       #7dd7c5;
+
+  --color-warning:              #f08c6e;
+  --color-warning-hover:        #d97050;
+  --color-warning-fg:           #ffffff;
+  --color-warning-subtle:       #fef3ef;
+  --color-warning-subtle-hover: #fde7dc;
+  --color-warning-border:       #f5b89e;
+}
+
+@mixin palette-pastel-dark {
+  --color-primary:              #b4b3f8;
+  --color-primary-hover:        #9f9ef6;
+  --color-primary-fg:           #1a1a3d;
+  --color-primary-subtle:       #1c1c3d;
+  --color-primary-subtle-hover: #25254f;
+  --color-primary-border:       #b4b3f8;
+
+  --color-danger:               #f4a0c0;
+  --color-danger-hover:         #f08ab0;
+  --color-danger-fg:            #3d0f22;
+  --color-danger-subtle:        #2d1422;
+  --color-danger-subtle-hover:  #3d1a2e;
+  --color-danger-border:        #f4a0c0;
+
+  --color-success:              #6dd8be;
+  --color-success-hover:        #55ccb0;
+  --color-success-fg:           #072e25;
+  --color-success-subtle:       #0d2a24;
+  --color-success-subtle-hover: #153830;
+  --color-success-border:       #6dd8be;
+
+  --color-warning:              #f5b094;
+  --color-warning-hover:        #f0a080;
+  --color-warning-fg:           #3d1a06;
+  --color-warning-subtle:       #2a1a0e;
+  --color-warning-subtle-hover: #3a2318;
+  --color-warning-border:       #f5b094;
+}
+
+// ─── Vibrant ──────────────────────────────────────────────────────────────────
+// Maximum saturation. Electric blue, vivid crimson, emerald, orange.
+
+@mixin palette-vibrant-light {
+  --color-primary:              #0066ff;
+  --color-primary-hover:        #0051cc;
+  --color-primary-fg:           #ffffff;
+  --color-primary-subtle:       #e5f0ff;
+  --color-primary-subtle-hover: #cce0ff;
+  --color-primary-border:       #0066ff;
+
+  --color-danger:               #f5005f;
+  --color-danger-hover:         #c2004c;
+  --color-danger-fg:            #ffffff;
+  --color-danger-subtle:        #ffe5ee;
+  --color-danger-subtle-hover:  #ffc8da;
+  --color-danger-border:        #f5005f;
+
+  --color-success:              #00c853;
+  --color-success-hover:        #00a040;
+  --color-success-fg:           #ffffff;
+  --color-success-subtle:       #e0faeb;
+  --color-success-subtle-hover: #b3f4cc;
+  --color-success-border:       #00c853;
+
+  --color-warning:              #ff6d00;
+  --color-warning-hover:        #cc5700;
+  --color-warning-fg:           #ffffff;
+  --color-warning-subtle:       #fff3e0;
+  --color-warning-subtle-hover: #ffe0b2;
+  --color-warning-border:       #ff6d00;
+}
+
+@mixin palette-vibrant-dark {
+  --color-primary:              #40a0ff;
+  --color-primary-hover:        #60b8ff;
+  --color-primary-fg:           #001c45;
+  --color-primary-subtle:       #001840;
+  --color-primary-subtle-hover: #002260;
+  --color-primary-border:       #40a0ff;
+
+  --color-danger:               #ff4080;
+  --color-danger-hover:         #ff60a0;
+  --color-danger-fg:            #3d0022;
+  --color-danger-subtle:        #2d0020;
+  --color-danger-subtle-hover:  #400030;
+  --color-danger-border:        #ff4080;
+
+  --color-success:              #20e870;
+  --color-success-hover:        #40f080;
+  --color-success-fg:           #002810;
+  --color-success-subtle:       #002010;
+  --color-success-subtle-hover: #003018;
+  --color-success-border:       #20e870;
+
+  --color-warning:              #ff8820;
+  --color-warning-hover:        #ffa040;
+  --color-warning-fg:           #2d1800;
+  --color-warning-subtle:       #281400;
+  --color-warning-subtle-hover: #382000;
+  --color-warning-border:       #ff8820;
+}
+
+// ─── Muted ────────────────────────────────────────────────────────────────────
+// Desaturated, earthy tones. Slate blue, terracotta, sage, ochre.
+
+@mixin palette-muted-light {
+  --color-primary:              #4f6282;
+  --color-primary-hover:        #3d5070;
+  --color-primary-fg:           #ffffff;
+  --color-primary-subtle:       #f1f3f7;
+  --color-primary-subtle-hover: #e3e7ef;
+  --color-primary-border:       #8fa1be;
+
+  --color-danger:               #9c4f4f;
+  --color-danger-hover:         #7f3e3e;
+  --color-danger-fg:            #ffffff;
+  --color-danger-subtle:        #f7f0f0;
+  --color-danger-subtle-hover:  #eddada;
+  --color-danger-border:        #c47c7c;
+
+  --color-success:              #4e7360;
+  --color-success-hover:        #3d5e4c;
+  --color-success-fg:           #ffffff;
+  --color-success-subtle:       #f0f5f2;
+  --color-success-subtle-hover: #d9ebe0;
+  --color-success-border:       #7da890;
+
+  --color-warning:              #8c6e3a;
+  --color-warning-hover:        #735b2e;
+  --color-warning-fg:           #ffffff;
+  --color-warning-subtle:       #f7f3ec;
+  --color-warning-subtle-hover: #ede4d2;
+  --color-warning-border:       #bfa070;
+}
+
+@mixin palette-muted-dark {
+  --color-primary:              #8099b8;
+  --color-primary-hover:        #95adca;
+  --color-primary-fg:           #0d1620;
+  --color-primary-subtle:       #141a22;
+  --color-primary-subtle-hover: #1e2732;
+  --color-primary-border:       #8099b8;
+
+  --color-danger:               #c07878;
+  --color-danger-hover:         #cc8888;
+  --color-danger-fg:            #1a0808;
+  --color-danger-subtle:        #1a0f0f;
+  --color-danger-subtle-hover:  #251818;
+  --color-danger-border:        #c07878;
+
+  --color-success:              #7aa88a;
+  --color-success-hover:        #88b898;
+  --color-success-fg:           #0a150e;
+  --color-success-subtle:       #101808;
+  --color-success-subtle-hover: #182212;
+  --color-success-border:       #7aa88a;
+
+  --color-warning:              #aa9060;
+  --color-warning-hover:        #baa070;
+  --color-warning-fg:           #1a1000;
+  --color-warning-subtle:       #1a1400;
+  --color-warning-subtle-hover: #251e00;
+  --color-warning-border:       #aa9060;
+}
+
+// ─── Grayscale ────────────────────────────────────────────────────────────────
+// No hue at all. Differentiates intents by lightness only.
+
+@mixin palette-grayscale-light {
+  --color-primary:              var(--gray-800);
+  --color-primary-hover:        var(--gray-900);
+  --color-primary-fg:           var(--gray-0);
+  --color-primary-subtle:       var(--gray-100);
+  --color-primary-subtle-hover: var(--gray-200);
+  --color-primary-border:       var(--gray-600);
+
+  --color-danger:               var(--gray-600);
+  --color-danger-hover:         var(--gray-700);
+  --color-danger-fg:            var(--gray-0);
+  --color-danger-subtle:        var(--gray-100);
+  --color-danger-subtle-hover:  var(--gray-200);
+  --color-danger-border:        var(--gray-400);
+
+  --color-success:              var(--gray-500);
+  --color-success-hover:        var(--gray-600);
+  --color-success-fg:           var(--gray-0);
+  --color-success-subtle:       var(--gray-100);
+  --color-success-subtle-hover: var(--gray-200);
+  --color-success-border:       var(--gray-300);
+
+  --color-warning:              var(--gray-400);
+  --color-warning-hover:        var(--gray-500);
+  --color-warning-fg:           var(--gray-0);
+  --color-warning-subtle:       var(--gray-50);
+  --color-warning-subtle-hover: var(--gray-100);
+  --color-warning-border:       var(--gray-300);
+}
+
+@mixin palette-grayscale-dark {
+  --color-primary:              var(--gray-100);
+  --color-primary-hover:        var(--gray-200);
+  --color-primary-fg:           var(--gray-900);
+  --color-primary-subtle:       var(--gray-800);
+  --color-primary-subtle-hover: var(--gray-700);
+  --color-primary-border:       var(--gray-300);
+
+  --color-danger:               var(--gray-300);
+  --color-danger-hover:         var(--gray-200);
+  --color-danger-fg:            var(--gray-900);
+  --color-danger-subtle:        var(--gray-800);
+  --color-danger-subtle-hover:  var(--gray-700);
+  --color-danger-border:        var(--gray-400);
+
+  --color-success:              var(--gray-400);
+  --color-success-hover:        var(--gray-300);
+  --color-success-fg:           var(--gray-900);
+  --color-success-subtle:       var(--gray-800);
+  --color-success-subtle-hover: var(--gray-700);
+  --color-success-border:       var(--gray-500);
+
+  --color-warning:              var(--gray-500);
+  --color-warning-hover:        var(--gray-400);
+  --color-warning-fg:           var(--gray-0);
+  --color-warning-subtle:       var(--gray-800);
+  --color-warning-subtle-hover: var(--gray-700);
+  --color-warning-border:       var(--gray-600);
+}
+
+// ─── Warm ─────────────────────────────────────────────────────────────────────
+// Earthy tone shifts: terracotta danger, sage success, amber warning.
+// Primary stays blue but subtle backgrounds are warmed up.
+
+@mixin palette-warm-light {
+  --color-primary:              var(--blue-600);
+  --color-primary-hover:        var(--blue-700);
+  --color-primary-fg:           var(--gray-0);
+  --color-primary-subtle:       #eef4ff;
+  --color-primary-subtle-hover: var(--blue-100);
+  --color-primary-border:       var(--blue-600);
+
+  --color-danger:               #c0392b;
+  --color-danger-hover:         #922b21;
+  --color-danger-fg:            #ffffff;
+  --color-danger-subtle:        #fff0ef;
+  --color-danger-subtle-hover:  #fdd9d7;
+  --color-danger-border:        #c0392b;
+
+  --color-success:              #4a7c59;
+  --color-success-hover:        #3a6147;
+  --color-success-fg:           #ffffff;
+  --color-success-subtle:       #f0fdf4;
+  --color-success-subtle-hover: #dcfce7;
+  --color-success-border:       #4a7c59;
+
+  --color-warning:              var(--amber-600);
+  --color-warning-hover:        var(--amber-700);
+  --color-warning-fg:           var(--gray-0);
+  --color-warning-subtle:       #fef9e8;
+  --color-warning-subtle-hover: var(--amber-100);
+  --color-warning-border:       var(--amber-600);
+}
+
+@mixin palette-warm-dark {
+  --color-primary:              var(--blue-400);
+  --color-primary-hover:        #93c5fd;
+  --color-primary-fg:           var(--gray-950);
+  --color-primary-subtle:       var(--blue-950);
+  --color-primary-subtle-hover: var(--blue-900);
+  --color-primary-border:       var(--blue-400);
+
+  --color-danger:               #e07060;
+  --color-danger-hover:         #ea8070;
+  --color-danger-fg:            #1c0806;
+  --color-danger-subtle:        #2d1210;
+  --color-danger-subtle-hover:  #3d1a18;
+  --color-danger-border:        #e07060;
+
+  --color-success:              #6aaa80;
+  --color-success-hover:        #7abb90;
+  --color-success-fg:           #061a0e;
+  --color-success-subtle:       #0e1e14;
+  --color-success-subtle-hover: #162a1e;
+  --color-success-border:       #6aaa80;
+
+  --color-warning:              var(--amber-400);
+  --color-warning-hover:        #fcd34d;
+  --color-warning-fg:           var(--amber-950);
+  --color-warning-subtle:       var(--amber-950);
+  --color-warning-subtle-hover: var(--amber-900);
+  --color-warning-border:       var(--amber-400);
+}
+
+// ─── Dim ──────────────────────────────────────────────────────────────────────
+// Cool, desaturated steel tones on light; standard dark-mode intents on dark.
+
+@mixin palette-dim-light {
+  --color-primary:              #4f6080;
+  --color-primary-hover:        #3d4e68;
+  --color-primary-fg:           #ffffff;
+  --color-primary-subtle:       #f0f3f8;
+  --color-primary-subtle-hover: #e0e6f0;
+  --color-primary-border:       #7890b0;
+
+  --color-danger:               #8c4a4a;
+  --color-danger-hover:         #743838;
+  --color-danger-fg:            #ffffff;
+  --color-danger-subtle:        #f8f0f0;
+  --color-danger-subtle-hover:  #f0e0e0;
+  --color-danger-border:        #b07070;
+
+  --color-success:              #4a7060;
+  --color-success-hover:        #385848;
+  --color-success-fg:           #ffffff;
+  --color-success-subtle:       #f0f5f3;
+  --color-success-subtle-hover: #dde8e3;
+  --color-success-border:       #70a090;
+
+  --color-warning:              #806030;
+  --color-warning-hover:        #664d26;
+  --color-warning-fg:           #ffffff;
+  --color-warning-subtle:       #f8f4ed;
+  --color-warning-subtle-hover: #ede3d0;
+  --color-warning-border:       #b09060;
+}
+
+@mixin palette-dim-dark {
+  --color-primary:              var(--blue-500);
+  --color-primary-hover:        var(--blue-400);
+  --color-primary-fg:           var(--gray-0);
+  --color-primary-subtle:       var(--blue-950);
+  --color-primary-subtle-hover: var(--blue-900);
+  --color-primary-border:       var(--blue-500);
+
+  --color-danger:               var(--red-500);
+  --color-danger-hover:         var(--red-400);
+  --color-danger-fg:            var(--gray-0);
+  --color-danger-subtle:        var(--red-950);
+  --color-danger-subtle-hover:  var(--red-900);
+  --color-danger-border:        var(--red-500);
+
+  --color-success:              var(--green-500);
+  --color-success-hover:        var(--green-400);
+  --color-success-fg:           var(--green-950);
+  --color-success-subtle:       var(--green-950);
+  --color-success-subtle-hover: var(--green-900);
+  --color-success-border:       var(--green-500);
+
+  --color-warning:              var(--amber-500);
+  --color-warning-hover:        var(--amber-400);
+  --color-warning-fg:           var(--amber-950);
+  --color-warning-subtle:       var(--amber-950);
+  --color-warning-subtle-hover: var(--amber-900);
+  --color-warning-border:       var(--amber-500);
+}
+
+// ─── Mono ─────────────────────────────────────────────────────────────────────
+// Pure grayscale intents differentiated by lightness only.
+
+@mixin palette-mono-light {
+  --color-primary:              #111111;
+  --color-primary-hover:        #333333;
+  --color-primary-fg:           #ffffff;
+  --color-primary-subtle:       #f0f0f0;
+  --color-primary-subtle-hover: #e2e2e2;
+  --color-primary-border:       #111111;
+
+  --color-danger:               #555555;
+  --color-danger-hover:         #333333;
+  --color-danger-fg:            #ffffff;
+  --color-danger-subtle:        #f5f5f5;
+  --color-danger-subtle-hover:  #e8e8e8;
+  --color-danger-border:        #555555;
+
+  --color-success:              #777777;
+  --color-success-hover:        #555555;
+  --color-success-fg:           #ffffff;
+  --color-success-subtle:       #f8f8f8;
+  --color-success-subtle-hover: #eeeeee;
+  --color-success-border:       #777777;
+
+  --color-warning:              #aaaaaa;
+  --color-warning-hover:        #888888;
+  --color-warning-fg:           #ffffff;
+  --color-warning-subtle:       #fafafa;
+  --color-warning-subtle-hover: #f0f0f0;
+  --color-warning-border:       #aaaaaa;
+}
+
+@mixin palette-mono-dark {
+  --color-primary:              #eeeeee;
+  --color-primary-hover:        #cccccc;
+  --color-primary-fg:           #111111;
+  --color-primary-subtle:       #222222;
+  --color-primary-subtle-hover: #333333;
+  --color-primary-border:       #eeeeee;
+
+  --color-danger:               #aaaaaa;
+  --color-danger-hover:         #cccccc;
+  --color-danger-fg:            #111111;
+  --color-danger-subtle:        #222222;
+  --color-danger-subtle-hover:  #333333;
+  --color-danger-border:        #aaaaaa;
+
+  --color-success:              #888888;
+  --color-success-hover:        #aaaaaa;
+  --color-success-fg:           #111111;
+  --color-success-subtle:       #1e1e1e;
+  --color-success-subtle-hover: #2a2a2a;
+  --color-success-border:       #888888;
+
+  --color-warning:              #666666;
+  --color-warning-hover:        #888888;
+  --color-warning-fg:           #dddddd;
+  --color-warning-subtle:       #1a1a1a;
+  --color-warning-subtle-hover: #252525;
+  --color-warning-border:       #666666;
+}
+
+// ─── Apply palettes ───────────────────────────────────────────────────────────
+
+html[data-palette="pastel"]    { @include palette-pastel-light; }
+html[data-palette="vibrant"]   { @include palette-vibrant-light; }
+html[data-palette="muted"]     { @include palette-muted-light; }
+html[data-palette="grayscale"] { @include palette-grayscale-light; }
+html[data-palette="warm"]      { @include palette-warm-light; }
+html[data-palette="dim"]       { @include palette-dim-light; }
+html[data-palette="mono"]      { @include palette-mono-light; }
+
+@media (prefers-color-scheme: dark) {
+  html[data-palette="pastel"]    { @include palette-pastel-dark; }
+  html[data-palette="vibrant"]   { @include palette-vibrant-dark; }
+  html[data-palette="muted"]     { @include palette-muted-dark; }
+  html[data-palette="grayscale"] { @include palette-grayscale-dark; }
+  html[data-palette="warm"]      { @include palette-warm-dark; }
+  html[data-palette="dim"]       { @include palette-dim-dark; }
+  html[data-palette="mono"]      { @include palette-mono-dark; }
+}
+
+html[data-theme="dark"][data-palette="pastel"]    { @include palette-pastel-dark; }
+html[data-theme="dark"][data-palette="vibrant"]   { @include palette-vibrant-dark; }
+html[data-theme="dark"][data-palette="muted"]     { @include palette-muted-dark; }
+html[data-theme="dark"][data-palette="grayscale"] { @include palette-grayscale-dark; }
+html[data-theme="dark"][data-palette="warm"]      { @include palette-warm-dark; }
+html[data-theme="dark"][data-palette="dim"]       { @include palette-dim-dark; }
+html[data-theme="dark"][data-palette="mono"]      { @include palette-mono-dark; }
+
+html[data-theme="light"][data-palette="pastel"]    { @include palette-pastel-light; }
+html[data-theme="light"][data-palette="vibrant"]   { @include palette-vibrant-light; }
+html[data-theme="light"][data-palette="muted"]     { @include palette-muted-light; }
+html[data-theme="light"][data-palette="grayscale"] { @include palette-grayscale-light; }
+html[data-theme="light"][data-palette="warm"]      { @include palette-warm-light; }
+html[data-theme="light"][data-palette="dim"]       { @include palette-dim-light; }
+html[data-theme="light"][data-palette="mono"]      { @include palette-mono-light; }

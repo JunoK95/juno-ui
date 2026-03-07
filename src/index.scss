@@ -1,4 +1,15 @@
 @use './styles/tokens';
+@use './styles/palettes';
+
+// ─── Theme application ────────────────────────────────────────────────────────
+:root,
+html[data-theme="light"] { @include tokens.light-tokens; }
+
+@media (prefers-color-scheme: dark) {
+  :root { @include tokens.dark-tokens; }
+}
+
+html[data-theme="dark"] { @include tokens.dark-tokens; }
 
 *,
 *::before,

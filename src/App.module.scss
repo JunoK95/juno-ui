@@ -174,6 +174,24 @@ $bp: 768px;
   }
 }
 
+.paletteSelect {
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 6px;
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: background-color 0.12s ease, color 0.12s ease;
+  appearance: auto;
+
+  &:hover {
+    background-color: var(--color-subtle);
+    color: var(--color-text);
+  }
+}
+
 .themeToggle {
   display: flex;
   margin-left: auto;

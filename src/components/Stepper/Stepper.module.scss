@@ -1,0 +1,125 @@
+// ─── Step state variables ─────────────────────────────────────────────────────
+
+.completed {
+  --step-indicator-bg:     var(--color-accent);
+  --step-indicator-color:  var(--color-text-on-accent);
+  --step-label-color:      var(--color-text);
+  --step-connector-color:  var(--color-accent);
+}
+
+.active {
+  --step-indicator-bg:     var(--color-accent);
+  --step-indicator-color:  var(--color-text-on-accent);
+  --step-label-color:      var(--color-text);
+  --step-connector-color:  var(--color-border);
+}
+
+.pending {
+  --step-indicator-bg:     var(--color-subtle);
+  --step-indicator-color:  var(--color-text-muted);
+  --step-label-color:      var(--color-text-muted);
+  --step-connector-color:  var(--color-border);
+}
+
+// ─── Horizontal ───────────────────────────────────────────────────────────────
+
+.stepper.horizontal {
+  display: flex;
+  align-items: flex-start;
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+
+    &:last-child {
+      flex: none;
+    }
+  }
+
+  .stepTrack {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .connector {
+    flex: 1;
+    height: 2px;
+    background: var(--step-connector-color);
+    transition: background-color 0.2s ease;
+  }
+
+  .stepContent {
+    text-align: center;
+    padding-top: 10px;
+  }
+}
+
+// ─── Vertical ─────────────────────────────────────────────────────────────────
+
+.stepper.vertical {
+  display: flex;
+  flex-direction: column;
+
+  .step {
+    display: flex;
+    gap: 14px;
+  }
+
+  .stepTrack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .connector {
+    flex: 1;
+    width: 2px;
+    min-height: 24px;
+    background: var(--step-connector-color);
+    margin: 4px 0;
+    transition: background-color 0.2s ease;
+  }
+
+  .stepContent {
+    padding-bottom: 20px;
+  }
+}
+
+// ─── Shared ───────────────────────────────────────────────────────────────────
+
+.indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--step-indicator-bg);
+  color: var(--step-indicator-color);
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--step-label-color);
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.desc {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin: 2px 0 0;
+}
+
+.connectorDone {
+  background: var(--color-accent);
+}

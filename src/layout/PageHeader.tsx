@@ -7,7 +7,7 @@ interface PageHeaderProps {
 }
 
 export function PageHeader({ title, desc, storybook }: PageHeaderProps) {
-  const url = `http://localhost:6006/?path=/docs/${storybook}--docs`
+  const url = `http://localhost:6006/?path=/story/${storybook}--default`
 
   return (
     <div className={s.pageHeaderRow}>
