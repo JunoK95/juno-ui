@@ -29,7 +29,7 @@ export function PalettePage() {
 
       <div className={s.section}>
         <p className={s.sectionTitle}>Intent colors</p>
-        <div className={s.canvas} style={{ flexDirection: 'column', gap: 12 }}>
+        <div className={s.canvas} style={{ flexDirection: 'column', gap: 12, alignItems: 'stretch' }}>
           {/* Header row */}
           <div style={{ display: 'flex', gap: 8 }}>
             <span style={{ width: 72, flexShrink: 0 }} />

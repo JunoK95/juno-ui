@@ -321,7 +321,7 @@
 }
 
 // ─── Dim ──────────────────────────────────────────────────────────────────────
-// Cool, desaturated steel tones on light; standard dark-mode intents on dark.
+// Cool, desaturated steel tones on both light and dark.
 
 @mixin palette-dim-light {
   --color-primary:              #4f6080;
@@ -354,33 +354,33 @@
 }
 
 @mixin palette-dim-dark {
-  --color-primary:              var(--blue-500);
-  --color-primary-hover:        var(--blue-400);
-  --color-primary-fg:           var(--gray-0);
-  --color-primary-subtle:       var(--blue-950);
-  --color-primary-subtle-hover: var(--blue-900);
-  --color-primary-border:       var(--blue-500);
+  --color-primary:              #8099c0;
+  --color-primary-hover:        #95aed0;
+  --color-primary-fg:           #0d1520;
+  --color-primary-subtle:       #131a26;
+  --color-primary-subtle-hover: #1c2636;
+  --color-primary-border:       #8099c0;
 
-  --color-danger:               var(--red-500);
-  --color-danger-hover:         var(--red-400);
-  --color-danger-fg:            var(--gray-0);
-  --color-danger-subtle:        var(--red-950);
-  --color-danger-subtle-hover:  var(--red-900);
-  --color-danger-border:        var(--red-500);
+  --color-danger:               #c07878;
+  --color-danger-hover:         #cc8888;
+  --color-danger-fg:            #1a0808;
+  --color-danger-subtle:        #1c1010;
+  --color-danger-subtle-hover:  #281818;
+  --color-danger-border:        #c07878;
 
-  --color-success:              var(--green-500);
-  --color-success-hover:        var(--green-400);
-  --color-success-fg:           var(--green-950);
-  --color-success-subtle:       var(--green-950);
-  --color-success-subtle-hover: var(--green-900);
-  --color-success-border:       var(--green-500);
+  --color-success:              #78a890;
+  --color-success-hover:        #88b8a0;
+  --color-success-fg:           #0a1410;
+  --color-success-subtle:       #101810;
+  --color-success-subtle-hover: #182418;
+  --color-success-border:       #78a890;
 
-  --color-warning:              var(--amber-500);
-  --color-warning-hover:        var(--amber-400);
-  --color-warning-fg:           var(--amber-950);
-  --color-warning-subtle:       var(--amber-950);
-  --color-warning-subtle-hover: var(--amber-900);
-  --color-warning-border:       var(--amber-500);
+  --color-warning:              #b09050;
+  --color-warning-hover:        #c0a060;
+  --color-warning-fg:           #1a1400;
+  --color-warning-subtle:       #1c1800;
+  --color-warning-subtle-hover: #262100;
+  --color-warning-border:       #b09050;
 }
 
 // ─── Mono ─────────────────────────────────────────────────────────────────────

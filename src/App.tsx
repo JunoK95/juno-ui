@@ -8,6 +8,7 @@ import { ButtonPage }  from './pages/ButtonPage'
 import { InputPage }   from './pages/InputPage'
 import { SelectPage }  from './pages/SelectPage'
 import { CheckboxPage } from './pages/CheckboxPage'
+import { SwitchPage }   from './pages/SwitchPage'
 import { BadgePage }   from './pages/BadgePage'
 import { AvatarPage }  from './pages/AvatarPage'
 import { TagPage }     from './pages/TagPage'
@@ -20,6 +21,13 @@ import { StepperPage }    from './pages/StepperPage'
 import { DrawerPage }    from './pages/DrawerPage'
 import { CardPage }     from './pages/CardPage'
 import { PalettePage }  from './pages/PalettePage'
+import { SeparatorPage } from './pages/SeparatorPage'
+import { SpinnerPage }   from './pages/SpinnerPage'
+import { ProgressPage }  from './pages/ProgressPage'
+import { AccordionPage } from './pages/AccordionPage'
+import { TooltipPage }   from './pages/TooltipPage'
+import { DropdownPage }  from './pages/DropdownPage'
+import { ModalPage }     from './pages/ModalPage'
 import s from './App.module.scss'
 
 export default function App() {
@@ -61,6 +69,7 @@ export default function App() {
             <Route path="/ui/input"    element={<InputPage />} />
             <Route path="/ui/select"   element={<SelectPage />} />
             <Route path="/ui/checkbox" element={<CheckboxPage />} />
+            <Route path="/ui/switch"   element={<SwitchPage />} />
             <Route path="/ui/badge"    element={<BadgePage />} />
             <Route path="/ui/avatar"   element={<AvatarPage />} />
             <Route path="/ui/tag"      element={<TagPage />} />
@@ -73,6 +82,13 @@ export default function App() {
             <Route path="/ui/drawer"     element={<DrawerPage />} />
             <Route path="/ui/card"       element={<CardPage />} />
             <Route path="/ui/palette"    element={<PalettePage />} />
+            <Route path="/ui/separator"  element={<SeparatorPage />} />
+            <Route path="/ui/spinner"    element={<SpinnerPage />} />
+            <Route path="/ui/progress"   element={<ProgressPage />} />
+            <Route path="/ui/accordion"  element={<AccordionPage />} />
+            <Route path="/ui/tooltip"    element={<TooltipPage />} />
+            <Route path="/ui/dropdown"   element={<DropdownPage />} />
+            <Route path="/ui/modal"      element={<ModalPage />} />
             <Route path="*"              element={<Navigate to="/" replace />} />
           </Routes>
         </div>

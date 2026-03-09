@@ -42,3 +42,27 @@ export type { DrawerProps, DrawerPosition, DrawerSize } from './Drawer'
 
 export { Card, CardHeader, CardBody, CardFooter } from './Card'
 export type { CardProps, CardVariant, CardColor } from './Card'
+
+export { Switch } from './Switch'
+export type { SwitchProps, SwitchSize, SwitchIntent } from './Switch'
+
+export { Separator } from './Separator'
+export type { SeparatorProps } from './Separator'
+
+export { Spinner } from './Spinner'
+export type { SpinnerProps, SpinnerSize, SpinnerIntent } from './Spinner'
+
+export { Progress } from './Progress'
+export type { ProgressProps, ProgressSize, ProgressIntent } from './Progress'
+
+export { Accordion } from './Accordion'
+export type { AccordionProps, AccordionItem } from './Accordion'
+
+export { Tooltip } from './Tooltip'
+export type { TooltipProps, TooltipSide } from './Tooltip'
+
+export { Dropdown } from './Dropdown'
+export type { DropdownProps, DropdownItem } from './Dropdown'
+
+export { Modal } from './Modal'
+export type { ModalProps, ModalSize } from './Modal'

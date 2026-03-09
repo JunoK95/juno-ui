@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes, ReactNode } from 'react'
+import { type ButtonHTMLAttributes, type ReactNode, useCallback, useRef, useState } from 'react'
 import styles from './Button.module.scss'
 
 export type ButtonVariant = 'solid' | 'outline' | 'ghost'
@@ -20,14 +20,29 @@ const intentClass: Record<ButtonIntent, string> = {
   warning: styles.intentWarning,
 }
 
+interface Ripple { id: number; x: number; y: number; size: number }
+
 export function Button({
   variant = 'solid',
   intent = 'default',
   size = 'md',
   className,
   children,
+  onMouseDown,
   ...props
 }: ButtonProps) {
+  const [ripples, setRipples] = useState<Ripple[]>([])
+  const nextId = useRef(0)
+
+  const handleMouseDown = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    const s = Math.max(rect.width, rect.height) * 2
+    const id = nextId.current++
+    setRipples(r => [...r, { id, x: e.clientX - rect.left - s / 2, y: e.clientY - rect.top - s / 2, size: s }])
+    setTimeout(() => setRipples(r => r.filter(rip => rip.id !== id)), 600)
+    onMouseDown?.(e)
+  }, [onMouseDown])
+
   const classes = [
     styles.button,
     intentClass[intent],
@@ -39,8 +54,11 @@ export function Button({
     .join(' ')
 
   return (
-    <button className={classes} {...props}>
+    <button className={classes} onMouseDown={handleMouseDown} {...props}>
       {children}
+      {ripples.map(({ id, x, y, size: s }) => (
+        <span key={id} className={styles.ripple} style={{ left: x, top: y, width: s, height: s }} />
+      ))}
     </button>
   )
 }

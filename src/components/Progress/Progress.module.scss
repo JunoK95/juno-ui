@@ -1,0 +1,70 @@
+// ─── Intent variables ──────────────────────────────────────────────────────────
+
+.intentDefault {
+  --pr-fill: var(--color-text-muted);
+}
+
+.intentPrimary {
+  --pr-fill: var(--color-primary);
+}
+
+.intentDanger {
+  --pr-fill: var(--color-danger);
+}
+
+.intentSuccess {
+  --pr-fill: var(--color-success);
+}
+
+.intentWarning {
+  --pr-fill: var(--color-warning);
+}
+
+// ─── Layout ───────────────────────────────────────────────────────────────────
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.label {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.value {
+  font-size: 12px;
+  font-family: ui-monospace, monospace;
+  color: var(--color-text-muted);
+}
+
+// ─── Track ────────────────────────────────────────────────────────────────────
+
+.track {
+  width: 100%;
+  background: var(--color-border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: var(--pr-fill);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+// ─── Sizes ────────────────────────────────────────────────────────────────────
+
+.sm { height: 4px; }
+.md { height: 6px; }
+.lg { height: 10px; }

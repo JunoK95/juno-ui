@@ -1,0 +1,55 @@
+// ─── Intent variables ──────────────────────────────────────────────────────────
+
+.intentDefault {
+  --sp-color: var(--color-text-muted);
+}
+
+.intentPrimary {
+  --sp-color: var(--color-primary);
+}
+
+.intentDanger {
+  --sp-color: var(--color-danger);
+}
+
+.intentSuccess {
+  --sp-color: var(--color-success);
+}
+
+.intentWarning {
+  --sp-color: var(--color-warning);
+}
+
+// ─── Base ─────────────────────────────────────────────────────────────────────
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  display: inline-block;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  border-top-color: var(--sp-color);
+  border-right-color: var(--sp-color);
+  animation: spin 0.65s linear infinite;
+  flex-shrink: 0;
+}
+
+// ─── Sizes ────────────────────────────────────────────────────────────────────
+
+.sm {
+  width:  16px;
+  height: 16px;
+}
+
+.md {
+  width:  20px;
+  height: 20px;
+}
+
+.lg {
+  width:  28px;
+  height: 28px;
+  border-width: 3px;
+}

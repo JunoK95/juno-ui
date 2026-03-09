@@ -11,18 +11,26 @@ export const navInputs: NavItem[] = [
   { label: 'Input',    path: '/ui/input' },
   { label: 'Select',   path: '/ui/select' },
   { label: 'Checkbox', path: '/ui/checkbox' },
+  { label: 'Switch',   path: '/ui/switch' },
+  { label: 'Dropdown', path: '/ui/dropdown' },
 ]
 
 export const navDisplay: NavItem[] = [
-  { label: 'Badge',  path: '/ui/badge' },
-  { label: 'Avatar', path: '/ui/avatar' },
-  { label: 'Tag',    path: '/ui/tag' },
-  { label: 'Card',   path: '/ui/card' },
+  { label: 'Badge',     path: '/ui/badge' },
+  { label: 'Avatar',    path: '/ui/avatar' },
+  { label: 'Tag',       path: '/ui/tag' },
+  { label: 'Card',      path: '/ui/card' },
+  { label: 'Tooltip',   path: '/ui/tooltip' },
+  { label: 'Separator', path: '/ui/separator' },
+  { label: 'Spinner',   path: '/ui/spinner' },
+  { label: 'Progress',  path: '/ui/progress' },
+  { label: 'Accordion', path: '/ui/accordion' },
 ]
 
 export const navFeedback: NavItem[] = [
   { label: 'Alert', path: '/ui/alert' },
   { label: 'Toast', path: '/ui/toast' },
+  { label: 'Modal', path: '/ui/modal' },
 ]
 
 export const navTheme: NavItem[] = [

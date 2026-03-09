@@ -1,0 +1,87 @@
+.accordion {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+// ─── Item ─────────────────────────────────────────────────────────────────────
+
+.item {
+  border-bottom: 1px solid var(--color-border);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+// ─── Trigger ──────────────────────────────────────────────────────────────────
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.12s ease;
+
+  &:hover {
+    background-color: var(--color-subtle);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.triggerLabel {
+  flex: 1;
+}
+
+// ─── Chevron ──────────────────────────────────────────────────────────────────
+
+.chevron {
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+  transition: transform 0.2s ease;
+
+  .open & {
+    transform: rotate(180deg);
+  }
+}
+
+// ─── Body (CSS grid animation) ────────────────────────────────────────────────
+
+.body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.22s ease;
+
+  .open & {
+    grid-template-rows: 1fr;
+  }
+}
+
+.bodyInner {
+  overflow: hidden;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+
+  .open & {
+    padding: 0 16px 14px;
+  }
+}

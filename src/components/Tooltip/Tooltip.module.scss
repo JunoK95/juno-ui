@@ -1,0 +1,97 @@
+.wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+// ─── Tooltip bubble ───────────────────────────────────────────────────────────
+
+.tooltip {
+  position: absolute;
+  z-index: 500;
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-size: 12px;
+  line-height: 1.4;
+  padding: 4px 8px;
+  border-radius: 5px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+
+  .wrapper:hover & {
+    opacity: 1;
+  }
+}
+
+// ─── Arrow shared ─────────────────────────────────────────────────────────────
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  border: 5px solid transparent;
+}
+
+// ─── Side: top ────────────────────────────────────────────────────────────────
+
+.top {
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+
+  &::after {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top-color: var(--color-text);
+    border-bottom: none;
+  }
+}
+
+// ─── Side: bottom ─────────────────────────────────────────────────────────────
+
+.bottom {
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+
+  &::after {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom-color: var(--color-text);
+    border-top: none;
+  }
+}
+
+// ─── Side: left ───────────────────────────────────────────────────────────────
+
+.left {
+  right: calc(100% + 6px);
+  top: 50%;
+  transform: translateY(-50%);
+
+  &::after {
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left-color: var(--color-text);
+    border-right: none;
+  }
+}
+
+// ─── Side: right ──────────────────────────────────────────────────────────────
+
+.right {
+  left: calc(100% + 6px);
+  top: 50%;
+  transform: translateY(-50%);
+
+  &::after {
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-right-color: var(--color-text);
+    border-left: none;
+  }
+}

@@ -192,6 +192,13 @@ $bp: 768px;
   }
 }
 
+.themeSwitch {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-text-muted);
+}
+
 .themeToggle {
   display: flex;
   margin-left: auto;
