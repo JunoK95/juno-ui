@@ -42,6 +42,7 @@ export default function App() {
 | `Checkbox` | Accessible checkbox with intent colors |
 | `Switch` | Toggle switch with intent colors |
 | `Dropdown` | Click-triggered menu with icons, shortcuts, dividers, labels |
+| `DatePicker` | Calendar popover for date or date+time selection |
 
 ### Display
 

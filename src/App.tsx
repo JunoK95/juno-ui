@@ -27,7 +27,8 @@ import { ProgressPage }  from './pages/ProgressPage'
 import { AccordionPage } from './pages/AccordionPage'
 import { TooltipPage }   from './pages/TooltipPage'
 import { DropdownPage }  from './pages/DropdownPage'
-import { ModalPage }     from './pages/ModalPage'
+import { ModalPage }       from './pages/ModalPage'
+import { DatePickerPage }  from './pages/DatePickerPage'
 import s from './App.module.scss'
 
 export default function App() {
@@ -88,7 +89,8 @@ export default function App() {
             <Route path="/ui/accordion"  element={<AccordionPage />} />
             <Route path="/ui/tooltip"    element={<TooltipPage />} />
             <Route path="/ui/dropdown"   element={<DropdownPage />} />
-            <Route path="/ui/modal"      element={<ModalPage />} />
+            <Route path="/ui/modal"       element={<ModalPage />} />
+            <Route path="/ui/datepicker" element={<DatePickerPage />} />
             <Route path="*"              element={<Navigate to="/" replace />} />
           </Routes>
         </div>

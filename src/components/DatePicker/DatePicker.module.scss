@@ -1,0 +1,281 @@
+// ─── Wrapper ──────────────────────────────────────────────────────────────────
+
+.wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+}
+
+// ─── Label ────────────────────────────────────────────────────────────────────
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+// ─── Trigger ──────────────────────────────────────────────────────────────────
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover:not(:disabled) {
+    border-color: var(--color-border-strong);
+  }
+
+  &:focus-visible {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-subtle);
+  }
+}
+
+.triggerOpen {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-subtle);
+}
+
+.triggerDisabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  background: var(--color-subtle);
+}
+
+.calIcon {
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.triggerValue {
+  flex: 1;
+  color: var(--color-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.triggerPlaceholder {
+  flex: 1;
+  color: var(--color-text-muted);
+}
+
+.clearBtn {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-text-muted);
+  border-radius: 3px;
+  padding: 1px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color 0.12s ease;
+
+  &:hover { color: var(--color-text); }
+}
+
+// ─── Sizes ────────────────────────────────────────────────────────────────────
+
+.sm {
+  padding: 5px 10px;
+  font-size: 13px;
+  min-width: 160px;
+}
+
+.md {
+  padding: 7px 12px;
+  font-size: 14px;
+  min-width: 180px;
+}
+
+.lg {
+  padding: 10px 16px;
+  font-size: 16px;
+  min-width: 210px;
+}
+
+// ─── Popover ──────────────────────────────────────────────────────────────────
+
+.popover {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  z-index: 300;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  padding: 12px;
+  width: 280px;
+  user-select: none;
+}
+
+// ─── Month navigation header ───────────────────────────────────────────────────
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.monthLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.navBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: background-color 0.12s ease, color 0.12s ease;
+
+  &:hover {
+    background: var(--color-subtle);
+    color: var(--color-text);
+  }
+}
+
+// ─── Day grid ─────────────────────────────────────────────────────────────────
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.dow {
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: 4px 0;
+}
+
+.day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 1;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  font-size: 13px;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background-color 0.1s ease, color 0.1s ease;
+
+  &:hover:not(:disabled) {
+    background: var(--color-subtle);
+  }
+}
+
+.dayOtherMonth {
+  color: var(--color-text-muted);
+  opacity: 0.5;
+}
+
+.dayToday {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.daySelected {
+  background: var(--color-primary) !important;
+  color: #fff !important;
+  font-weight: 600;
+}
+
+.dayDisabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+// ─── Time picker ──────────────────────────────────────────────────────────────
+
+.timePicker {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.timeSelect {
+  flex: 1;
+  padding: 5px 6px;
+  font-size: 13px;
+  font-family: ui-monospace, monospace;
+  border: 1.5px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+  appearance: none;
+  text-align: center;
+  transition: border-color 0.15s ease;
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-primary);
+  }
+}
+
+.timeSep {
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+// ─── Footer ───────────────────────────────────────────────────────────────────
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--color-border);
+}
+
+.footerBtn {
+  flex: 1;
+  padding: 6px 0;
+  font-size: 13px;
+  font-family: inherit;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: background-color 0.12s ease;
+
+  &:hover { background: var(--color-subtle); }
+}
+
+.footerBtnPrimary {
+  @extend .footerBtn;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+
+  &:hover { opacity: 0.9; background: var(--color-primary); }
+}

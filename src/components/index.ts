@@ -66,3 +66,6 @@ export type { DropdownProps, DropdownItem } from './Dropdown'
 
 export { Modal } from './Modal'
 export type { ModalProps, ModalSize } from './Modal'
+
+export { DatePicker } from './DatePicker'
+export type { DatePickerProps, DatePickerMode, DatePickerSize } from './DatePicker'

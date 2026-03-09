@@ -12,7 +12,8 @@ export const navInputs: NavItem[] = [
   { label: 'Select',   path: '/ui/select' },
   { label: 'Checkbox', path: '/ui/checkbox' },
   { label: 'Switch',   path: '/ui/switch' },
-  { label: 'Dropdown', path: '/ui/dropdown' },
+  { label: 'Dropdown',   path: '/ui/dropdown' },
+  { label: 'DatePicker', path: '/ui/datepicker' },
 ]
 
 export const navDisplay: NavItem[] = [
