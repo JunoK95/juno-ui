@@ -37,7 +37,8 @@ export function Topbar({ theme, onChangeTheme, onMenuToggle, palette, onChangePa
       </select>
 
       <div className={s.themeSwitch}>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+          style={{ color: theme === 'light' ? 'var(--color-primary)' : 'var(--color-text-muted)', transition: 'color 0.2s ease' }}>
           <circle cx="12" cy="12" r="5"/>
           <line x1="12" y1="1"  x2="12" y2="3"  stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
           <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
@@ -54,7 +55,8 @@ export function Topbar({ theme, onChangeTheme, onMenuToggle, palette, onChangePa
           onChange={e => onChangeTheme(e.target.checked ? 'dark' : 'light')}
           aria-label="Toggle dark mode"
         />
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+          style={{ color: theme === 'dark' ? 'var(--color-primary)' : 'var(--color-text-muted)', transition: 'color 0.2s ease' }}>
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
         </svg>
       </div>

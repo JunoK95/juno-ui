@@ -1,6 +1,6 @@
 # juno-ui-library
 
-A lightweight React component library with a token-based theme system and built-in dark mode support.
+A lightweight React component library with a token-based theme system, dark mode, and multiple color palettes.
 
 ## Installation
 
@@ -8,52 +8,96 @@ A lightweight React component library with a token-based theme system and built-
 npm install juno-ui-library
 ```
 
+Import the stylesheet once in your app entry:
+
+```ts
+import 'juno-ui-library/dist/juno-ui-library.css'
+```
+
 ## Usage
 
 ```tsx
-import { Button } from 'juno-ui-library'
+import { Button, Badge, Spinner } from 'juno-ui-library'
 
 export default function App() {
   return (
-    <Button intent="primary" variant="solid">
-      Save changes
-    </Button>
+    <>
+      <Button intent="primary" variant="solid">Save changes</Button>
+      <Badge intent="success">Live</Badge>
+      <Spinner intent="primary" />
+    </>
   )
 }
 ```
 
 ## Components
 
-### Button
+### Inputs
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `variant` | `'solid' \| 'outline' \| 'ghost'` | `'solid'` | Visual style |
-| `intent` | `'default' \| 'primary' \| 'danger' \| 'success' \| 'warning'` | `'default'` | Color intent |
-| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Size |
-| `disabled` | `boolean` | `false` | Disabled state |
+| Component | Description |
+|-----------|-------------|
+| `Button` | Solid / outline / ghost × 5 intents × 3 sizes |
+| `Input` | Text input with intent states and sizes |
+| `Select` | Dropdown select with intent states |
+| `Checkbox` | Accessible checkbox with intent colors |
+| `Switch` | Toggle switch with intent colors |
+| `Dropdown` | Click-triggered menu with icons, shortcuts, dividers, labels |
 
-`variant` and `intent` compose freely — 15 combinations with no extra code:
+### Display
 
-```tsx
-<Button variant="solid"   intent="primary">Save</Button>
-<Button variant="outline" intent="danger">Delete</Button>
-<Button variant="ghost"   intent="success">Confirm</Button>
-<Button variant="outline" intent="warning" size="sm">Review</Button>
-```
+| Component | Description |
+|-----------|-------------|
+| `Badge` | Small status label |
+| `Avatar` | User avatar with image, initials, and status indicator |
+| `Tag` | Removable or static tag |
+| `Card` | Surface container with optional header/body/footer |
+| `Tooltip` | CSS hover tooltip on 4 sides with arrow |
+| `Separator` | Horizontal or vertical divider, optional label |
+| `Spinner` | Animated loading indicator |
+| `Progress` | Track+fill progress bar with intent colors |
+| `Accordion` | Animated collapsible sections, single or multi-open |
+
+### Feedback
+
+| Component | Description |
+|-----------|-------------|
+| `Alert` | Inline alert with intent colors |
+| `Toast` | Transient notification |
+| `Modal` | Portal dialog with backdrop, ESC, and scroll lock |
+| `Drawer` | Slide-in panel from left or right |
+
+### Navigation
+
+| Component | Description |
+|-----------|-------------|
+| `Tabs` | Tab navigation with multiple variants |
+| `Breadcrumb` | Hierarchical path navigation |
+| `Pagination` | Page navigation controls |
+| `Stepper` | Step-by-step progress indicator |
 
 ## Theming
 
-The library uses CSS custom properties. Light mode is the default; dark mode activates automatically via OS preference or explicitly via a `data-theme` attribute:
+All components use CSS custom properties. Light mode is the default; dark mode activates via OS preference or a `data-theme` attribute:
 
 ```html
-<div data-theme="light"> … </div>
-<div data-theme="dark"> … </div>
+<html data-theme="light"> … </html>
+<html data-theme="dark"> … </html>
 ```
 
-### Overriding tokens
+### Color palettes
 
-Override any token in your own stylesheet:
+Eight built-in palettes override the accent colors via `data-palette`:
+
+```html
+<html data-palette="warm">   <!-- warm reds/oranges -->
+<html data-palette="dim">    <!-- muted blues -->
+<html data-palette="mono">   <!-- monochrome -->
+<html data-palette="pastel"> <!-- soft pastels -->
+```
+
+Available values: `default` · `warm` · `dim` · `mono` · `pastel` · `vibrant` · `muted` · `grayscale`
+
+### Overriding tokens
 
 ```css
 :root {
@@ -62,7 +106,7 @@ Override any token in your own stylesheet:
 }
 ```
 
-Full token reference: [`src/styles/_tokens.scss`](./src/styles/_tokens.scss).
+Full token reference: [`src/styles/_tokens.scss`](./src/styles/_tokens.scss)
 
 ## Development
 
@@ -71,6 +115,7 @@ npm install
 npm run dev          # Vite dev sandbox  → localhost:5173
 npm run storybook    # Storybook         → localhost:6006
 npm run build        # Build library     → dist/
+npm test             # Jest unit tests
 ```
 
 ## Publishing
