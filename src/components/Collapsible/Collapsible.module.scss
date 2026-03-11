@@ -1,0 +1,89 @@
+.collapsible {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.unstyled {
+  border: none;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.disabled {
+  opacity: 0.45;
+}
+
+// ─── Trigger ──────────────────────────────────────────────────────────────────
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.12s ease;
+  outline: none;
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-subtle);
+  }
+
+  &:focus-visible {
+    box-shadow: inset 0 0 0 2px var(--color-primary);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.triggerContent {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text);
+  text-align: left;
+}
+
+// ─── Chevron ──────────────────────────────────────────────────────────────────
+
+.chevron {
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+  transition: transform 0.22s ease;
+
+  .open & {
+    transform: rotate(180deg);
+  }
+}
+
+// ─── Body (CSS grid animation) ────────────────────────────────────────────────
+
+.body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.22s ease;
+
+  .open & {
+    grid-template-rows: 1fr;
+  }
+}
+
+.bodyInner {
+  overflow: hidden;
+}
+
+.bodyContent {
+  padding: 8px 16px 16px;
+  border-top: 1px solid var(--color-border);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}

@@ -28,3 +28,38 @@ body {
   font-family: system-ui, -apple-system, sans-serif;
   min-height: 100vh;
 }
+
+// ─── Scrollbar ────────────────────────────────────────────────────────────────
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.3s ease;
+
+  &:hover {
+    scrollbar-color: var(--color-border-strong) transparent;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 999px;
+  border: 2px solid var(--color-bg);
+}
+
+*:hover::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+
+  &:hover {
+    background: var(--color-text-muted);
+  }
+}

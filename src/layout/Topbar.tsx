@@ -10,7 +10,7 @@ interface TopbarProps {
   onChangePalette: (p: Palette) => void
 }
 
-const palettes: Palette[] = ['default', 'warm', 'dim', 'mono', 'pastel', 'vibrant', 'muted', 'grayscale']
+const palettes: Palette[] = ['default', 'warm', 'dim', 'mono', 'pastel', 'vibrant', 'muted', 'grayscale', 'forest', 'ocean', 'rose']
 
 export function Topbar({ theme, onChangeTheme, onMenuToggle, palette, onChangePalette }: TopbarProps) {
   return (

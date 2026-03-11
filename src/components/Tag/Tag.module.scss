@@ -73,6 +73,16 @@
   border-color: var(--tag-border);
 }
 
+// ─── Clickable ────────────────────────────────────────────────────────────────
+
+.clickable {
+  cursor: pointer;
+  transition: opacity 0.12s ease, filter 0.12s ease;
+
+  &:hover  { filter: brightness(0.92); }
+  &:active { filter: brightness(0.85); }
+}
+
 // ─── Remove button ────────────────────────────────────────────────────────────
 
 .remove {

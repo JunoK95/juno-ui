@@ -23,6 +23,7 @@ $bp: 768px;
   background: var(--color-surface);
   border-right: 1px solid var(--color-border);
   overflow-y: auto;
+  padding-bottom: 24px;
   z-index: 100;
   transition: transform 0.25s ease;
 

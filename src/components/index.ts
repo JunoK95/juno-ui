@@ -69,3 +69,9 @@ export type { ModalProps, ModalSize } from './Modal'
 
 export { DatePicker } from './DatePicker'
 export type { DatePickerProps, DatePickerMode, DatePickerSize } from './DatePicker'
+
+export { Collapsible } from './Collapsible'
+export type { CollapsibleProps } from './Collapsible'
+
+export { Slider } from './Slider'
+export type { SliderProps, SliderSize, SliderIntent } from './Slider'

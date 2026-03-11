@@ -1,7 +1,6 @@
 // ─── Color palettes ────────────────────────────────────────────────────────────
 // Applied via data-palette attribute on <html>.
-// All palettes override intent tokens only — surface/text/border tokens from
-// the active light/dark theme continue to apply unchanged.
+// All palettes override surface, text, border, and intent tokens.
 // ──────────────────────────────────────────────────────────────────────────────
 
 // ─── Pastel ───────────────────────────────────────────────────────────────────
@@ -134,6 +133,22 @@
 // Desaturated, earthy tones. Slate blue, terracotta, sage, ochre.
 
 @mixin palette-muted-light {
+  --color-bg:      #f5f4f2;
+  --color-surface: #fafaf8;
+
+  --color-border:        #dcdad4;
+  --color-border-strong: #b8b4a8;
+
+  --color-text:           #1e1c18;
+  --color-text-secondary: #6a6860;
+  --color-text-muted:     #9a9890;
+  --color-text-on-accent: #ffffff;
+
+  --color-accent:       #1e1c18;
+  --color-accent-hover: #302e28;
+  --color-subtle:       #eeece8;
+  --color-subtle-hover: #e2e0d8;
+
   --color-primary:              #4f6282;
   --color-primary-hover:        #3d5070;
   --color-primary-fg:           #ffffff;
@@ -164,6 +179,22 @@
 }
 
 @mixin palette-muted-dark {
+  --color-bg:      #0f0e0c;
+  --color-surface: #17150f;
+
+  --color-border:        #2a2820;
+  --color-border-strong: #3c3a30;
+
+  --color-text:           #e0ddd5;
+  --color-text-secondary: #908c80;
+  --color-text-muted:     #5a5850;
+  --color-text-on-accent: #0f0e0c;
+
+  --color-accent:       #e0ddd5;
+  --color-accent-hover: #c8c5bc;
+  --color-subtle:       #1e1c14;
+  --color-subtle-hover: #28261c;
+
   --color-primary:              #8099b8;
   --color-primary-hover:        #95adca;
   --color-primary-fg:           #0d1620;
@@ -197,6 +228,22 @@
 // No hue at all. Differentiates intents by lightness only.
 
 @mixin palette-grayscale-light {
+  --color-bg:      #f4f5f7;
+  --color-surface: #fafbfc;
+
+  --color-border:        #dde0e6;
+  --color-border-strong: #b8bdc8;
+
+  --color-text:           #101418;
+  --color-text-secondary: #50586a;
+  --color-text-muted:     #8890a0;
+  --color-text-on-accent: #ffffff;
+
+  --color-accent:       #101418;
+  --color-accent-hover: #202838;
+  --color-subtle:       #eceef2;
+  --color-subtle-hover: #e0e3ea;
+
   --color-primary:              var(--gray-800);
   --color-primary-hover:        var(--gray-900);
   --color-primary-fg:           var(--gray-0);
@@ -227,6 +274,22 @@
 }
 
 @mixin palette-grayscale-dark {
+  --color-bg:      #090a0c;
+  --color-surface: #10121a;
+
+  --color-border:        #1e2028;
+  --color-border-strong: #2c3040;
+
+  --color-text:           #dde0e8;
+  --color-text-secondary: #7880a0;
+  --color-text-muted:     #404858;
+  --color-text-on-accent: #10121a;
+
+  --color-accent:       #dde0e8;
+  --color-accent-hover: #c0c8dc;
+  --color-subtle:       #141820;
+  --color-subtle-hover: #1e2230;
+
   --color-primary:              var(--gray-100);
   --color-primary-hover:        var(--gray-200);
   --color-primary-fg:           var(--gray-900);
@@ -261,6 +324,22 @@
 // Primary stays blue but subtle backgrounds are warmed up.
 
 @mixin palette-warm-light {
+  --color-bg:      #fdf9f0;
+  --color-surface: #fffdf8;
+
+  --color-border:        #e8dfc0;
+  --color-border-strong: #c8b880;
+
+  --color-text:           #1e1800;
+  --color-text-secondary: #6a5830;
+  --color-text-muted:     #a08850;
+  --color-text-on-accent: #ffffff;
+
+  --color-accent:       #1e1800;
+  --color-accent-hover: #342c00;
+  --color-subtle:       #f5efd0;
+  --color-subtle-hover: #ede3b8;
+
   --color-primary:              var(--blue-600);
   --color-primary-hover:        var(--blue-700);
   --color-primary-fg:           var(--gray-0);
@@ -291,6 +370,22 @@
 }
 
 @mixin palette-warm-dark {
+  --color-bg:      #0f0c00;
+  --color-surface: #181400;
+
+  --color-border:        #302800;
+  --color-border-strong: #483c00;
+
+  --color-text:           #f0e0c0;
+  --color-text-secondary: #a89060;
+  --color-text-muted:     #6a5830;
+  --color-text-on-accent: #0f0c00;
+
+  --color-accent:       #f0e0c0;
+  --color-accent-hover: #dcc898;
+  --color-subtle:       #201a00;
+  --color-subtle-hover: #2c2400;
+
   --color-primary:              var(--blue-400);
   --color-primary-hover:        #93c5fd;
   --color-primary-fg:           var(--gray-950);
@@ -324,6 +419,22 @@
 // Cool, desaturated steel tones on both light and dark.
 
 @mixin palette-dim-light {
+  --color-bg:      #f2f4f8;
+  --color-surface: #fafbfd;
+
+  --color-border:        #d0d8e8;
+  --color-border-strong: #a8b8d0;
+
+  --color-text:           #0c1020;
+  --color-text-secondary: #4a5870;
+  --color-text-muted:     #8090a8;
+  --color-text-on-accent: #ffffff;
+
+  --color-accent:       #0c1020;
+  --color-accent-hover: #1a2438;
+  --color-subtle:       #e4e8f4;
+  --color-subtle-hover: #d4daea;
+
   --color-primary:              #4f6080;
   --color-primary-hover:        #3d4e68;
   --color-primary-fg:           #ffffff;
@@ -354,6 +465,22 @@
 }
 
 @mixin palette-dim-dark {
+  --color-bg:      #080c14;
+  --color-surface: #0e1420;
+
+  --color-border:        #182030;
+  --color-border-strong: #243040;
+
+  --color-text:           #c8d0e0;
+  --color-text-secondary: #6878a0;
+  --color-text-muted:     #3a4860;
+  --color-text-on-accent: #0c1020;
+
+  --color-accent:       #c8d0e0;
+  --color-accent-hover: #a8b8d0;
+  --color-subtle:       #121c2c;
+  --color-subtle-hover: #1a263a;
+
   --color-primary:              #8099c0;
   --color-primary-hover:        #95aed0;
   --color-primary-fg:           #0d1520;
@@ -387,6 +514,22 @@
 // Pure grayscale intents differentiated by lightness only.
 
 @mixin palette-mono-light {
+  --color-bg:      #f8f8f8;
+  --color-surface: #ffffff;
+
+  --color-border:        #e0e0e0;
+  --color-border-strong: #c0c0c0;
+
+  --color-text:           #111111;
+  --color-text-secondary: #555555;
+  --color-text-muted:     #888888;
+  --color-text-on-accent: #ffffff;
+
+  --color-accent:       #111111;
+  --color-accent-hover: #333333;
+  --color-subtle:       #eeeeee;
+  --color-subtle-hover: #e2e2e2;
+
   --color-primary:              #111111;
   --color-primary-hover:        #333333;
   --color-primary-fg:           #ffffff;
@@ -417,6 +560,22 @@
 }
 
 @mixin palette-mono-dark {
+  --color-bg:      #0a0a0a;
+  --color-surface: #111111;
+
+  --color-border:        #222222;
+  --color-border-strong: #333333;
+
+  --color-text:           #eeeeee;
+  --color-text-secondary: #999999;
+  --color-text-muted:     #555555;
+  --color-text-on-accent: #111111;
+
+  --color-accent:       #eeeeee;
+  --color-accent-hover: #cccccc;
+  --color-subtle:       #1a1a1a;
+  --color-subtle-hover: #222222;
+
   --color-primary:              #eeeeee;
   --color-primary-hover:        #cccccc;
   --color-primary-fg:           #111111;
@@ -446,6 +605,291 @@
   --color-warning-border:       #666666;
 }
 
+// ─── Forest ───────────────────────────────────────────────────────────────────
+// Green-tinted surfaces. Natural, calm, earthy.
+
+@mixin palette-forest-light {
+  --color-bg:      #f1f7f0;
+  --color-surface: #fafcf9;
+
+  --color-border:        #c4d8c0;
+  --color-border-strong: #96ba90;
+
+  --color-text:           #1a2d18;
+  --color-text-secondary: #4a6e48;
+  --color-text-muted:     #7a9e78;
+  --color-text-on-accent: #ffffff;
+
+  --color-accent:       #1a2d18;
+  --color-accent-hover: #2d4a2a;
+  --color-subtle:       #e4f0e0;
+  --color-subtle-hover: #d4e8d0;
+
+  --color-primary:              #2d6a4f;
+  --color-primary-hover:        #1b4332;
+  --color-primary-fg:           #ffffff;
+  --color-primary-subtle:       #e8f5f0;
+  --color-primary-subtle-hover: #d0ece4;
+  --color-primary-border:       #52b788;
+
+  --color-danger:               #c44d3a;
+  --color-danger-hover:         #a83828;
+  --color-danger-fg:            #ffffff;
+  --color-danger-subtle:        #faeee9;
+  --color-danger-subtle-hover:  #f4ddd5;
+  --color-danger-border:        #c44d3a;
+
+  --color-success:              #40916c;
+  --color-success-hover:        #2d7555;
+  --color-success-fg:           #ffffff;
+  --color-success-subtle:       #eaf5f0;
+  --color-success-subtle-hover: #d0ece2;
+  --color-success-border:       #40916c;
+
+  --color-warning:              #d4860c;
+  --color-warning-hover:        #b06c08;
+  --color-warning-fg:           #ffffff;
+  --color-warning-subtle:       #fef4e0;
+  --color-warning-subtle-hover: #fce8c0;
+  --color-warning-border:       #d4860c;
+}
+
+@mixin palette-forest-dark {
+  --color-bg:      #080f08;
+  --color-surface: #0f1a0f;
+
+  --color-border:        #1e3320;
+  --color-border-strong: #2d4a2e;
+
+  --color-text:           #c8e0c4;
+  --color-text-secondary: #6a9868;
+  --color-text-muted:     #3d6038;
+  --color-text-on-accent: #ffffff;
+
+  --color-accent:       #c8e0c4;
+  --color-accent-hover: #a8c8a4;
+  --color-subtle:       #142014;
+  --color-subtle-hover: #1e301e;
+
+  --color-primary:              #52b788;
+  --color-primary-hover:        #6ec99a;
+  --color-primary-fg:           #071c10;
+  --color-primary-subtle:       #0a2018;
+  --color-primary-subtle-hover: #122e22;
+  --color-primary-border:       #52b788;
+
+  --color-danger:               #e07060;
+  --color-danger-hover:         #f08070;
+  --color-danger-fg:            #1a0806;
+  --color-danger-subtle:        #2a1210;
+  --color-danger-subtle-hover:  #3a1c18;
+  --color-danger-border:        #e07060;
+
+  --color-success:              #74c69d;
+  --color-success-hover:        #88d4ae;
+  --color-success-fg:           #062010;
+  --color-success-subtle:       #0a2018;
+  --color-success-subtle-hover: #122e20;
+  --color-success-border:       #74c69d;
+
+  --color-warning:              #f4a261;
+  --color-warning-hover:        #f8b478;
+  --color-warning-fg:           #1a1000;
+  --color-warning-subtle:       #241800;
+  --color-warning-subtle-hover: #342200;
+  --color-warning-border:       #f4a261;
+}
+
+// ─── Ocean ────────────────────────────────────────────────────────────────────
+// Blue-tinted surfaces. Cool, professional, focused.
+
+@mixin palette-ocean-light {
+  --color-bg:      #f0f5fb;
+  --color-surface: #fafcfe;
+
+  --color-border:        #c0d4ea;
+  --color-border-strong: #8ab0d0;
+
+  --color-text:           #0d1e2d;
+  --color-text-secondary: #3d6080;
+  --color-text-muted:     #6a90b0;
+  --color-text-on-accent: #ffffff;
+
+  --color-accent:       #0d1e2d;
+  --color-accent-hover: #1a3048;
+  --color-subtle:       #e0ecf8;
+  --color-subtle-hover: #ccdff0;
+
+  --color-primary:              #0077b6;
+  --color-primary-hover:        #005f8e;
+  --color-primary-fg:           #ffffff;
+  --color-primary-subtle:       #e0f0fa;
+  --color-primary-subtle-hover: #c8e4f5;
+  --color-primary-border:       #0077b6;
+
+  --color-danger:               #d62828;
+  --color-danger-hover:         #b01e1e;
+  --color-danger-fg:            #ffffff;
+  --color-danger-subtle:        #faeaea;
+  --color-danger-subtle-hover:  #f4d0d0;
+  --color-danger-border:        #d62828;
+
+  --color-success:              #2a9d8f;
+  --color-success-hover:        #1e7a6e;
+  --color-success-fg:           #ffffff;
+  --color-success-subtle:       #e4f5f3;
+  --color-success-subtle-hover: #c8ece8;
+  --color-success-border:       #2a9d8f;
+
+  --color-warning:              #e76f51;
+  --color-warning-hover:        #c45a3e;
+  --color-warning-fg:           #ffffff;
+  --color-warning-subtle:       #fdf0ec;
+  --color-warning-subtle-hover: #f9ddd5;
+  --color-warning-border:       #e76f51;
+}
+
+@mixin palette-ocean-dark {
+  --color-bg:      #060c14;
+  --color-surface: #0a1220;
+
+  --color-border:        #162036;
+  --color-border-strong: #203050;
+
+  --color-text:           #c4d8ee;
+  --color-text-secondary: #6090b8;
+  --color-text-muted:     #3a6088;
+  --color-text-on-accent: #ffffff;
+
+  --color-accent:       #c4d8ee;
+  --color-accent-hover: #a0bedd;
+  --color-subtle:       #101c2e;
+  --color-subtle-hover: #162840;
+
+  --color-primary:              #48a8d8;
+  --color-primary-hover:        #60b8e8;
+  --color-primary-fg:           #061428;
+  --color-primary-subtle:       #081828;
+  --color-primary-subtle-hover: #0e2438;
+  --color-primary-border:       #48a8d8;
+
+  --color-danger:               #e05050;
+  --color-danger-hover:         #f07070;
+  --color-danger-fg:            #1a0808;
+  --color-danger-subtle:        #280a0a;
+  --color-danger-subtle-hover:  #381212;
+  --color-danger-border:        #e05050;
+
+  --color-success:              #3dbdb0;
+  --color-success-hover:        #50cdbe;
+  --color-success-fg:           #061414;
+  --color-success-subtle:       #081818;
+  --color-success-subtle-hover: #102424;
+  --color-success-border:       #3dbdb0;
+
+  --color-warning:              #f09050;
+  --color-warning-hover:        #f8a870;
+  --color-warning-fg:           #1a1000;
+  --color-warning-subtle:       #201400;
+  --color-warning-subtle-hover: #2e1e00;
+  --color-warning-border:       #f09050;
+}
+
+// ─── Rose ─────────────────────────────────────────────────────────────────────
+// Pink-tinted surfaces. Warm, soft, inviting.
+
+@mixin palette-rose-light {
+  --color-bg:      #fdf4f6;
+  --color-surface: #fffafb;
+
+  --color-border:        #e8c4cc;
+  --color-border-strong: #d094a8;
+
+  --color-text:           #2d0e16;
+  --color-text-secondary: #7a4058;
+  --color-text-muted:     #b07090;
+  --color-text-on-accent: #ffffff;
+
+  --color-accent:       #2d0e16;
+  --color-accent-hover: #4a1e2e;
+  --color-subtle:       #f8e8ed;
+  --color-subtle-hover: #f0d4de;
+
+  --color-primary:              #c9184a;
+  --color-primary-hover:        #a61040;
+  --color-primary-fg:           #ffffff;
+  --color-primary-subtle:       #fce8ed;
+  --color-primary-subtle-hover: #f8d0da;
+  --color-primary-border:       #c9184a;
+
+  --color-danger:               #dc2626;
+  --color-danger-hover:         #b91c1c;
+  --color-danger-fg:            #ffffff;
+  --color-danger-subtle:        #fef2f2;
+  --color-danger-subtle-hover:  #fde0e0;
+  --color-danger-border:        #dc2626;
+
+  --color-success:              #16a34a;
+  --color-success-hover:        #15803d;
+  --color-success-fg:           #ffffff;
+  --color-success-subtle:       #f0fdf4;
+  --color-success-subtle-hover: #dcfce7;
+  --color-success-border:       #16a34a;
+
+  --color-warning:              #d97706;
+  --color-warning-hover:        #b45309;
+  --color-warning-fg:           #ffffff;
+  --color-warning-subtle:       #fffbeb;
+  --color-warning-subtle-hover: #fef3c7;
+  --color-warning-border:       #d97706;
+}
+
+@mixin palette-rose-dark {
+  --color-bg:      #140810;
+  --color-surface: #1e101a;
+
+  --color-border:        #381828;
+  --color-border-strong: #501e38;
+
+  --color-text:           #f0c8d8;
+  --color-text-secondary: #b87898;
+  --color-text-muted:     #785060;
+  --color-text-on-accent: #ffffff;
+
+  --color-accent:       #f0c8d8;
+  --color-accent-hover: #e0a8c0;
+  --color-subtle:       #280f1e;
+  --color-subtle-hover: #36152a;
+
+  --color-primary:              #f06090;
+  --color-primary-hover:        #f880a8;
+  --color-primary-fg:           #1a0018;
+  --color-primary-subtle:       #28081e;
+  --color-primary-subtle-hover: #38102a;
+  --color-primary-border:       #f06090;
+
+  --color-danger:               #f87171;
+  --color-danger-hover:         #fca5a5;
+  --color-danger-fg:            #1a0808;
+  --color-danger-subtle:        #280a0a;
+  --color-danger-subtle-hover:  #381212;
+  --color-danger-border:        #f87171;
+
+  --color-success:              #60c0b0;
+  --color-success-hover:        #70d0be;
+  --color-success-fg:           #061414;
+  --color-success-subtle:       #081818;
+  --color-success-subtle-hover: #102424;
+  --color-success-border:       #60c0b0;
+
+  --color-warning:              #e8b050;
+  --color-warning-hover:        #f0c060;
+  --color-warning-fg:           #1a1000;
+  --color-warning-subtle:       #201600;
+  --color-warning-subtle-hover: #2e2000;
+  --color-warning-border:       #e8b050;
+}
+
 // ─── Apply palettes ───────────────────────────────────────────────────────────
 
 html[data-palette="pastel"]    { @include palette-pastel-light; }
@@ -455,6 +899,9 @@ html[data-palette="grayscale"] { @include palette-grayscale-light; }
 html[data-palette="warm"]      { @include palette-warm-light; }
 html[data-palette="dim"]       { @include palette-dim-light; }
 html[data-palette="mono"]      { @include palette-mono-light; }
+html[data-palette="forest"]    { @include palette-forest-light; }
+html[data-palette="ocean"]     { @include palette-ocean-light; }
+html[data-palette="rose"]      { @include palette-rose-light; }
 
 @media (prefers-color-scheme: dark) {
   html[data-palette="pastel"]    { @include palette-pastel-dark; }
@@ -464,6 +911,9 @@ html[data-palette="mono"]      { @include palette-mono-light; }
   html[data-palette="warm"]      { @include palette-warm-dark; }
   html[data-palette="dim"]       { @include palette-dim-dark; }
   html[data-palette="mono"]      { @include palette-mono-dark; }
+  html[data-palette="forest"]    { @include palette-forest-dark; }
+  html[data-palette="ocean"]     { @include palette-ocean-dark; }
+  html[data-palette="rose"]      { @include palette-rose-dark; }
 }
 
 html[data-theme="dark"][data-palette="pastel"]    { @include palette-pastel-dark; }
@@ -473,6 +923,9 @@ html[data-theme="dark"][data-palette="grayscale"] { @include palette-grayscale-d
 html[data-theme="dark"][data-palette="warm"]      { @include palette-warm-dark; }
 html[data-theme="dark"][data-palette="dim"]       { @include palette-dim-dark; }
 html[data-theme="dark"][data-palette="mono"]      { @include palette-mono-dark; }
+html[data-theme="dark"][data-palette="forest"]    { @include palette-forest-dark; }
+html[data-theme="dark"][data-palette="ocean"]     { @include palette-ocean-dark; }
+html[data-theme="dark"][data-palette="rose"]      { @include palette-rose-dark; }
 
 html[data-theme="light"][data-palette="pastel"]    { @include palette-pastel-light; }
 html[data-theme="light"][data-palette="vibrant"]   { @include palette-vibrant-light; }
@@ -481,3 +934,6 @@ html[data-theme="light"][data-palette="grayscale"] { @include palette-grayscale-
 html[data-theme="light"][data-palette="warm"]      { @include palette-warm-light; }
 html[data-theme="light"][data-palette="dim"]       { @include palette-dim-light; }
 html[data-theme="light"][data-palette="mono"]      { @include palette-mono-light; }
+html[data-theme="light"][data-palette="forest"]    { @include palette-forest-light; }
+html[data-theme="light"][data-palette="ocean"]     { @include palette-ocean-light; }
+html[data-theme="light"][data-palette="rose"]      { @include palette-rose-light; }

@@ -1,5 +1,5 @@
 export type Theme = 'light' | 'dark'
-export type Palette = 'default' | 'warm' | 'dim' | 'mono' | 'pastel' | 'vibrant' | 'muted' | 'grayscale'
+export type Palette = 'default' | 'warm' | 'dim' | 'mono' | 'pastel' | 'vibrant' | 'muted' | 'grayscale' | 'forest' | 'ocean' | 'rose'
 
 export interface NavItem {
   label: string
@@ -14,6 +14,7 @@ export const navInputs: NavItem[] = [
   { label: 'Switch',   path: '/ui/switch' },
   { label: 'Dropdown',   path: '/ui/dropdown' },
   { label: 'DatePicker', path: '/ui/datepicker' },
+  { label: 'Slider',     path: '/ui/slider' },
 ]
 
 export const navDisplay: NavItem[] = [
@@ -25,7 +26,8 @@ export const navDisplay: NavItem[] = [
   { label: 'Separator', path: '/ui/separator' },
   { label: 'Spinner',   path: '/ui/spinner' },
   { label: 'Progress',  path: '/ui/progress' },
-  { label: 'Accordion', path: '/ui/accordion' },
+  { label: 'Accordion',   path: '/ui/accordion' },
+  { label: 'Collapsible', path: '/ui/collapsible' },
 ]
 
 export const navFeedback: NavItem[] = [

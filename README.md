@@ -43,6 +43,7 @@ export default function App() {
 | `Switch` | Toggle switch with intent colors |
 | `Dropdown` | Click-triggered menu with icons, shortcuts, dividers, labels |
 | `DatePicker` | Calendar popover for date or date+time selection |
+| `Slider` | Range input with intent colors, sizes, and value display |
 
 ### Display
 
@@ -57,6 +58,7 @@ export default function App() {
 | `Spinner` | Animated loading indicator |
 | `Progress` | Track+fill progress bar with intent colors |
 | `Accordion` | Animated collapsible sections, single or multi-open |
+| `Collapsible` | Single expandable section with a custom trigger |
 
 ### Feedback
 

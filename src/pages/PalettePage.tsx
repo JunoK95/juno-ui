@@ -1,6 +1,66 @@
+import { useRef, useState } from 'react'
 import { Badge, Button, Alert } from '../index'
 import { PageHeader } from '../layout/PageHeader'
 import s from '../App.module.scss'
+
+function rgbToHex(rgb: string): string {
+  const m = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/)
+  if (!m) return rgb
+  return '#' + [m[1], m[2], m[3]].map(n => parseInt(n).toString(16).padStart(2, '0')).join('')
+}
+
+function ColorSwatch({ cssVar, border }: { cssVar: string; border?: string }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [hex, setHex] = useState<string | null>(null)
+
+  return (
+    <div style={{ position: 'relative', flex: 1 }}>
+      <div
+        ref={ref}
+        onMouseEnter={() => {
+          if (ref.current) setHex(rgbToHex(getComputedStyle(ref.current).backgroundColor))
+        }}
+        onMouseLeave={() => setHex(null)}
+        style={{
+          height: 28,
+          borderRadius: 5,
+          background: `var(${cssVar})`,
+          border: border ?? '1px solid rgba(128,128,128,0.2)',
+        }}
+      />
+      {hex && (
+        <div style={{
+          position: 'absolute',
+          bottom: 'calc(100% + 5px)',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          background: 'var(--color-text)',
+          color: 'var(--color-bg)',
+          fontSize: 11,
+          fontFamily: 'ui-monospace, monospace',
+          padding: '3px 7px',
+          borderRadius: 4,
+          whiteSpace: 'nowrap',
+          pointerEvents: 'none',
+          zIndex: 10,
+        }}>
+          {hex}
+        </div>
+      )}
+    </div>
+  )
+}
+
+const surfaceTokens = [
+  { label: 'bg',             var: '--color-bg' },
+  { label: 'surface',        var: '--color-surface' },
+  { label: 'border',         var: '--color-border' },
+  { label: 'border-strong',  var: '--color-border-strong' },
+  { label: 'subtle',         var: '--color-subtle' },
+  { label: 'text',           var: '--color-text' },
+  { label: 'text-secondary', var: '--color-text-secondary' },
+  { label: 'text-muted',     var: '--color-text-muted' },
+] as const
 
 const intentSlots = [
   { key: 'main',         label: 'main' },
@@ -28,6 +88,18 @@ export function PalettePage() {
       />
 
       <div className={s.section}>
+        <p className={s.sectionTitle}>Surface & foreground</p>
+        <div className={s.canvas} style={{ flexDirection: 'column', gap: 8, alignItems: 'stretch' }}>
+          {surfaceTokens.map(token => (
+            <div key={token.var} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <span className={s.canvasLabel} style={{ width: 72, flexShrink: 0 }}>{token.label}</span>
+              <ColorSwatch cssVar={token.var} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className={s.section}>
         <p className={s.sectionTitle}>Intent colors</p>
         <div className={s.canvas} style={{ flexDirection: 'column', gap: 12, alignItems: 'stretch' }}>
           {/* Header row */}
@@ -44,19 +116,7 @@ export function PalettePage() {
               <span className={s.canvasLabel} style={{ width: 72, flexShrink: 0 }}>{intent}</span>
               {intentSlots.map(slot => {
                 const cssVar = intentVar(intent, slot.key)
-                return (
-                  <div
-                    key={slot.key}
-                    title={cssVar}
-                    style={{
-                      flex: 1,
-                      height: 28,
-                      borderRadius: 5,
-                      background: `var(${cssVar})`,
-                      border: '1px solid rgba(0,0,0,0.08)',
-                    }}
-                  />
-                )
+                return <ColorSwatch key={slot.key} cssVar={cssVar} border="1px solid rgba(0,0,0,0.08)" />
               })}
             </div>
           ))}

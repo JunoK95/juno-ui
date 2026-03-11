@@ -23,15 +23,31 @@ export function Tag({
   variant = 'subtle',
   intent = 'default',
   onRemove,
+  onClick,
   className,
   children,
   ...props
 }: TagProps) {
-  const classes = [styles.tag, intentClass[intent], styles[variant], className]
+  const clickable = !!onClick
+  const classes = [styles.tag, intentClass[intent], styles[variant], clickable ? styles.clickable : '', className]
     .filter(Boolean).join(' ')
 
+  function handleKeyDown(e: React.KeyboardEvent<HTMLSpanElement>) {
+    if (clickable && (e.key === 'Enter' || e.key === ' ')) {
+      e.preventDefault()
+      onClick?.(e as unknown as React.MouseEvent<HTMLSpanElement>)
+    }
+  }
+
   return (
-    <span className={classes} {...props}>
+    <span
+      className={classes}
+      onClick={onClick}
+      onKeyDown={handleKeyDown}
+      role={clickable ? 'button' : undefined}
+      tabIndex={clickable ? 0 : undefined}
+      {...props}
+    >
       {children}
       {onRemove && (
         <button className={styles.remove} onClick={onRemove} aria-label="Remove" type="button">
