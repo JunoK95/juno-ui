@@ -3,7 +3,9 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import type { Theme, Palette } from './nav'
 import { Sidebar } from './layout/Sidebar'
 import { Topbar } from './layout/Topbar'
-import { HomePage }    from './pages/HomePage'
+import { HomePage }       from './pages/HomePage'
+import { IntroPage }      from './pages/IntroPage'
+import { GetStartedPage } from './pages/GetStartedPage'
 import { ButtonPage }  from './pages/ButtonPage'
 import { InputPage }   from './pages/InputPage'
 import { SelectPage }  from './pages/SelectPage'
@@ -31,6 +33,7 @@ import { ModalPage }       from './pages/ModalPage'
 import { DatePickerPage }  from './pages/DatePickerPage'
 import { CollapsiblePage } from './pages/CollapsiblePage'
 import { SliderPage }      from './pages/SliderPage'
+import { TypographyPage }  from './pages/TypographyPage'
 import s from './App.module.scss'
 
 export default function App() {
@@ -67,7 +70,9 @@ export default function App() {
 
         <div className={s.content}>
           <Routes>
-            <Route path="/"            element={<HomePage />} />
+            <Route path="/"              element={<HomePage />} />
+            <Route path="/intro"         element={<IntroPage />} />
+            <Route path="/get-started"   element={<GetStartedPage />} />
             <Route path="/ui/button"   element={<ButtonPage />} />
             <Route path="/ui/input"    element={<InputPage />} />
             <Route path="/ui/select"   element={<SelectPage />} />
@@ -84,7 +89,8 @@ export default function App() {
             <Route path="/ui/stepper"    element={<StepperPage />} />
             <Route path="/ui/drawer"     element={<DrawerPage />} />
             <Route path="/ui/card"       element={<CardPage />} />
-            <Route path="/ui/palette"    element={<PalettePage />} />
+            <Route path="/ui/palette"     element={<PalettePage />} />
+            <Route path="/ui/typography"  element={<TypographyPage />} />
             <Route path="/ui/separator"  element={<SeparatorPage />} />
             <Route path="/ui/spinner"    element={<SpinnerPage />} />
             <Route path="/ui/progress"   element={<ProgressPage />} />

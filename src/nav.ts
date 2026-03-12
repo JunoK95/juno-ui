@@ -6,6 +6,11 @@ export interface NavItem {
   path: string | null
 }
 
+export const navGeneral: NavItem[] = [
+  { label: 'Introduction', path: '/intro' },
+  { label: 'Get Started',  path: '/get-started' },
+]
+
 export const navInputs: NavItem[] = [
   { label: 'Button',   path: '/ui/button' },
   { label: 'Input',    path: '/ui/input' },
@@ -37,7 +42,8 @@ export const navFeedback: NavItem[] = [
 ]
 
 export const navTheme: NavItem[] = [
-  { label: 'Palette', path: '/ui/palette' },
+  { label: 'Palette',    path: '/ui/palette' },
+  { label: 'Typography', path: '/ui/typography' },
 ]
 
 export const navNavigation: NavItem[] = [

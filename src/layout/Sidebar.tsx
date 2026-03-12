@@ -1,5 +1,5 @@
 import { NavLink, Link } from 'react-router-dom'
-import { navDisplay, navFeedback, navInputs, navNavigation, navTheme } from '../nav'
+import { navGeneral, navDisplay, navFeedback, navInputs, navNavigation, navTheme } from '../nav'
 import type { NavItem } from '../nav'
 import s from '../App.module.scss'
 
@@ -53,6 +53,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           <p className={s.logoSub}>components</p>
         </Link>
 
+        <NavGroup label="General"    items={navGeneral}    onNavClick={onClose} />
         <NavGroup label="Inputs"     items={navInputs}     onNavClick={onClose} />
         <NavGroup label="Display"    items={navDisplay}    onNavClick={onClose} />
         <NavGroup label="Feedback"   items={navFeedback}   onNavClick={onClose} />

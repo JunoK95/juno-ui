@@ -1,17 +1,70 @@
 import { Link } from 'react-router-dom'
 import s from '../App.module.scss'
 
+const stats = [
+  { num: '26', label: 'components' },
+  { num: '11', label: 'palettes' },
+  { num: '4',  label: 'intents' },
+  { num: '2',  label: 'themes' },
+]
+
+const features = [
+  {
+    title: 'Token-based theming',
+    desc: 'Every color is a CSS custom property. Swap palettes at runtime with a single data attribute — no rebuild needed.',
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Dark & light mode',
+    desc: 'Both themes included. Respects prefers-color-scheme and can be overridden at any time.',
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'TypeScript first',
+    desc: 'Fully typed props, variants, and intents. Definitions are bundled — no @types package required.',
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <rect x="2" y="2" width="20" height="20" rx="3"/>
+        <path d="M14 10h-1.5a1.5 1.5 0 0 0 0 3H14a1.5 1.5 0 0 1 0 3H12" stroke="white" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
+        <line x1="9" y1="9" x2="9" y2="19" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+        <line x1="7" y1="9" x2="11" y2="9" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Semantic intents',
+    desc: 'Primary, danger, success, and warning intent props on every component — consistent feedback across the UI.',
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+    ),
+  },
+]
+
 export function HomePage() {
   return (
     <div className={s.home}>
+      <div className={s.homeGlow} aria-hidden="true" />
+
       <span className={s.homeBadge}>v0.1.0</span>
       <h1 className={s.homeTitle}>juno-ui</h1>
       <p className={s.homeSubtitle}>
         A minimal, themeable React component library built with CSS custom
         properties. Supports light and dark mode out of the box.
       </p>
+
       <div className={s.homeActions}>
-        <Link to="/ui/button" className={s.homeCta}>Browse components →</Link>
+        <Link to="/intro" className={s.homeCta}>Get started →</Link>
         <a
           href="https://github.com/JunoK95/juno-ui"
           target="_blank"
@@ -23,6 +76,25 @@ export function HomePage() {
           </svg>
           GitHub
         </a>
+      </div>
+
+      <div className={s.homeStats}>
+        {stats.map(stat => (
+          <div key={stat.label} className={s.homeStat}>
+            <span className={s.homeStatNum}>{stat.num}</span>
+            <span className={s.homeStatLabel}>{stat.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className={s.homeFeatureGrid}>
+        {features.map(f => (
+          <div key={f.title} className={s.homeFeature}>
+            <div className={s.homeFeatureIcon}>{f.icon}</div>
+            <p className={s.homeFeatureTitle}>{f.title}</p>
+            <p className={s.homeFeatureDesc}>{f.desc}</p>
+          </div>
+        ))}
       </div>
     </div>
   )

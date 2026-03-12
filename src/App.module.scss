@@ -233,15 +233,30 @@ $bp: 768px;
 // ─── Home page ────────────────────────────────────────────────────────────────
 
 .home {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 72px 0 0;
-  max-width: 560px;
+  max-width: 600px;
+  overflow: visible;
 
   @media (max-width: $bp) {
     padding: 48px 0 0;
   }
+}
+
+.homeGlow {
+  position: absolute;
+  top: -40px;
+  right: -180px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle at 50% 40%, var(--color-primary-subtle), transparent 68%);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.9;
+  transition: background 0.3s ease;
 }
 
 .homeBadge {
@@ -255,18 +270,22 @@ $bp: 768px;
   padding: 3px 10px;
   border-radius: 100px;
   margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
 }
 
 .homeTitle {
-  font-size: 52px;
+  font-size: 56px;
   font-weight: 800;
   letter-spacing: -0.04em;
   color: var(--color-text);
   margin: 0 0 14px;
   line-height: 1.05;
+  position: relative;
+  z-index: 1;
 
   @media (max-width: $bp) {
-    font-size: 36px;
+    font-size: 38px;
   }
 }
 
@@ -274,7 +293,10 @@ $bp: 768px;
   font-size: 16px;
   color: var(--color-text-secondary);
   line-height: 1.65;
-  margin: 0 0 40px;
+  margin: 0 0 36px;
+  max-width: 440px;
+  position: relative;
+  z-index: 1;
 
   @media (max-width: $bp) {
     font-size: 15px;
@@ -285,6 +307,8 @@ $bp: 768px;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 }
 
 .homeCta {
@@ -323,6 +347,109 @@ $bp: 768px;
     background-color: var(--color-subtle);
     color: var(--color-text);
   }
+}
+
+.homeStats {
+  display: flex;
+  gap: 0;
+  width: 100%;
+  margin-top: 52px;
+  padding: 28px 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: $bp) {
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 40px;
+  }
+}
+
+.homeStat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 0 24px;
+  border-left: 1px solid var(--color-border);
+
+  &:first-child {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  @media (max-width: $bp) {
+    flex: 0 0 calc(50% - 12px);
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
+.homeStatNum {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+.homeStatLabel {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.homeFeatureGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+  margin-top: 32px;
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: $bp) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.homeFeature {
+  padding: 20px 22px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  transition: border-color 0.15s ease;
+
+  &:hover {
+    border-color: var(--color-border-strong);
+  }
+}
+
+.homeFeatureIcon {
+  width: 34px;
+  height: 34px;
+  background: var(--color-primary-subtle);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  margin-bottom: 14px;
+}
+
+.homeFeatureTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 5px;
+}
+
+.homeFeatureDesc {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
 }
 
 // ─── Component page ───────────────────────────────────────────────────────────
@@ -382,6 +509,80 @@ $bp: 768px;
   margin-bottom: 36px;
 }
 
+.docsProse {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin: 0 0 16px;
+  max-width: 640px;
+}
+
+.docsHeading {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 8px;
+}
+
+.codeBlock {
+  display: block;
+  background: var(--color-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 13px;
+  font-family: ui-monospace, monospace;
+  color: var(--color-text);
+  white-space: pre;
+  overflow-x: auto;
+  margin: 0 0 24px;
+  line-height: 1.6;
+}
+
+.inlineCode {
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  background: var(--color-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 1px 5px;
+  color: var(--color-text);
+}
+
+.docsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.docsCard {
+  padding: 14px 16px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: border-color 0.12s ease, background 0.12s ease;
+
+  &:hover {
+    border-color: var(--color-border-strong);
+    background: var(--color-subtle);
+  }
+}
+
+.docsCardLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 2px;
+}
+
+.docsCardSub {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
 .sectionTitle {
   font-size: 11px;
   font-weight: 600;
@@ -411,4 +612,178 @@ $bp: 768px;
   font-family: ui-monospace, monospace;
   color: var(--color-text-muted);
   min-width: 60px;
+}
+
+// ─── Typography page ──────────────────────────────────────────────────────────
+
+.typefaceGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 0;
+
+  @media (max-width: $bp) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.typefaceCard {
+  padding: 24px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.typefaceName {
+  font-size: 11px;
+  font-weight: 600;
+  font-family: ui-monospace, monospace;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.typefaceDisplay {
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--color-text);
+  margin-bottom: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.typefaceStack {
+  font-size: 11px;
+  font-family: ui-monospace, monospace;
+  color: var(--color-text-muted);
+  margin-bottom: 20px;
+}
+
+.typefaceAlphabet {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  word-break: break-all;
+}
+
+.typeScale {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.typeRow {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--color-border);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: var(--color-subtle);
+  }
+}
+
+.typeMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  width: 100px;
+  flex-shrink: 0;
+}
+
+.typeMetaName {
+  font-size: 11px;
+  font-weight: 600;
+  font-family: ui-monospace, monospace;
+  color: var(--color-text-muted);
+}
+
+.typeMetaInfo {
+  font-size: 10px;
+  font-family: ui-monospace, monospace;
+  color: var(--color-border-strong);
+}
+
+.typeSample {
+  flex: 1;
+  color: var(--color-text);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.typeWeightGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+
+  @media (max-width: $bp) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.typeWeightCard {
+  padding: 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.typeWeightSample {
+  font-size: 22px;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+.typeWeightLabel {
+  font-size: 11px;
+  font-family: ui-monospace, monospace;
+  color: var(--color-text-muted);
+}
+
+.typeColorRows {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 28px 24px;
+  gap: 16px;
+}
+
+.typeColorRow {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+}
+
+.typeColorMeta {
+  font-size: 11px;
+  font-family: ui-monospace, monospace;
+  color: var(--color-text-muted);
+  width: 140px;
+  flex-shrink: 0;
+}
+
+.typeColorSample {
+  font-size: 15px;
+  font-weight: 400;
 }
