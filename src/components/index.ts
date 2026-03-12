@@ -75,3 +75,9 @@ export type { CollapsibleProps } from './Collapsible'
 
 export { Slider } from './Slider'
 export type { SliderProps, SliderSize, SliderIntent } from './Slider'
+
+export { Calendar } from './Calendar'
+export type { CalendarProps, CalendarRange } from './Calendar'
+
+export { Textbox } from './Textbox'
+export type { TextboxProps, TextboxSize, TextboxIntent, TextboxResize } from './Textbox'

@@ -230,6 +230,19 @@ $bp: 768px;
   }
 }
 
+// ─── Examples page ────────────────────────────────────────────────────────────
+
+.examplesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+
+  @media (max-width: $bp) {
+    grid-template-columns: 1fr;
+  }
+}
+
 // ─── Home page ────────────────────────────────────────────────────────────────
 
 .home {
@@ -346,6 +359,48 @@ $bp: 768px;
   &:hover {
     background-color: var(--color-subtle);
     color: var(--color-text);
+  }
+}
+
+.homeDonate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-top: 32px;
+  border-top: 1px solid var(--color-border);
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.homeDonateText {
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.homeDonateLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+
+  svg { color: #e05c7a; flex-shrink: 0; }
+
+  &:hover {
+    color: var(--color-text);
+    border-color: var(--color-border-strong);
+    background-color: var(--color-subtle);
   }
 }
 

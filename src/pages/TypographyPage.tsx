@@ -57,6 +57,7 @@ export function TypographyPage() {
       <PageHeader
         title="Typography"
         desc="The type scale, weights, and text color tokens used across the library."
+        storybook="theme-typography"
       />
 
       <div className={s.section}>

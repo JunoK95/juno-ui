@@ -32,7 +32,10 @@ import { DropdownPage }  from './pages/DropdownPage'
 import { ModalPage }       from './pages/ModalPage'
 import { DatePickerPage }  from './pages/DatePickerPage'
 import { CollapsiblePage } from './pages/CollapsiblePage'
-import { SliderPage }      from './pages/SliderPage'
+import { SliderPage }    from './pages/SliderPage'
+import { CalendarPage }  from './pages/CalendarPage'
+import { TextboxPage }   from './pages/TextboxPage'
+import { ExamplesPage }  from './pages/ExamplesPage'
 import { TypographyPage }  from './pages/TypographyPage'
 import s from './App.module.scss'
 
@@ -73,8 +76,10 @@ export default function App() {
             <Route path="/"              element={<HomePage />} />
             <Route path="/intro"         element={<IntroPage />} />
             <Route path="/get-started"   element={<GetStartedPage />} />
+            <Route path="/examples"      element={<ExamplesPage />} />
             <Route path="/ui/button"   element={<ButtonPage />} />
             <Route path="/ui/input"    element={<InputPage />} />
+            <Route path="/ui/textbox"  element={<TextboxPage />} />
             <Route path="/ui/select"   element={<SelectPage />} />
             <Route path="/ui/checkbox" element={<CheckboxPage />} />
             <Route path="/ui/switch"   element={<SwitchPage />} />
@@ -100,7 +105,8 @@ export default function App() {
             <Route path="/ui/modal"       element={<ModalPage />} />
             <Route path="/ui/datepicker"  element={<DatePickerPage />} />
             <Route path="/ui/collapsible" element={<CollapsiblePage />} />
-            <Route path="/ui/slider"      element={<SliderPage />} />
+            <Route path="/ui/slider"    element={<SliderPage />} />
+            <Route path="/ui/calendar"  element={<CalendarPage />} />
             <Route path="*"              element={<Navigate to="/" replace />} />
           </Routes>
         </div>

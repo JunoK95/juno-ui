@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Select } from '../index'
 import type { SelectIntent } from '../index'
 import { PageHeader } from '../layout/PageHeader'
@@ -18,7 +19,18 @@ const roleOptions = [
   { value: 'viewer', label: 'Viewer' },
 ]
 
+const tagOptions = [
+  { value: 'design',     label: 'Design' },
+  { value: 'frontend',   label: 'Frontend' },
+  { value: 'backend',    label: 'Backend' },
+  { value: 'devops',     label: 'DevOps' },
+  { value: 'mobile',     label: 'Mobile' },
+  { value: 'security',   label: 'Security' },
+]
+
 export function SelectPage() {
+  const [tags, setTags] = useState<string[]>([])
+
   return (
     <>
       <PageHeader title="Select" desc="Lets users choose from a list of options." storybook="components-select" />
@@ -53,6 +65,22 @@ export function SelectPage() {
         <p className={s.sectionTitle}>Disabled</p>
         <div className={s.canvas}>
           <Select disabled label="Role" options={roleOptions} placeholder="Select…" style={{ width: '200px' }} />
+        </div>
+      </div>
+
+      <div className={s.section}>
+        <p className={s.sectionTitle}>Multi-select</p>
+        <div className={s.canvas} style={{ flexDirection: 'column', alignItems: 'stretch' }}>
+          <Select
+            multiple
+            label="Tags"
+            hint={tags.length > 0 ? `${tags.length} tag${tags.length > 1 ? 's' : ''} selected` : 'Choose one or more tags.'}
+            options={tagOptions}
+            placeholder="Select tags…"
+            multiValue={tags}
+            onMultiChange={setTags}
+            style={{ width: '100%' }}
+          />
         </div>
       </div>
     </>

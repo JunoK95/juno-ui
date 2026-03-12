@@ -1,0 +1,126 @@
+// ─── Intent variables ─────────────────────────────────────────────────────────
+
+.intentDefault {
+  --tx-border:       var(--color-border);
+  --tx-border-focus: var(--color-primary);
+  --tx-ring:         var(--color-primary-subtle);
+  --tx-hint:         var(--color-text-muted);
+}
+
+.intentDanger {
+  --tx-border:       var(--color-danger-border);
+  --tx-border-focus: var(--color-danger);
+  --tx-ring:         var(--color-danger-subtle);
+  --tx-hint:         var(--color-danger);
+}
+
+.intentSuccess {
+  --tx-border:       var(--color-success-border);
+  --tx-border-focus: var(--color-success);
+  --tx-ring:         var(--color-success-subtle);
+  --tx-hint:         var(--color-success);
+}
+
+.intentWarning {
+  --tx-border:       var(--color-warning-border);
+  --tx-border-focus: var(--color-warning);
+  --tx-ring:         var(--color-warning-subtle);
+  --tx-hint:         var(--color-warning);
+}
+
+// ─── Wrapper ──────────────────────────────────────────────────────────────────
+
+.wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+// ─── Label ────────────────────────────────────────────────────────────────────
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+// ─── Textarea ─────────────────────────────────────────────────────────────────
+
+$radius: 6px;
+$transition: 0.15s ease;
+
+.textarea {
+  display: block;
+  width: 100%;
+  border: 1.5px solid var(--tx-border);
+  border-radius: $radius;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-family: inherit;
+  outline: none;
+  transition: border-color $transition, box-shadow $transition;
+  min-height: 0;
+
+  &::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  &:hover:not(:disabled):not(:focus) {
+    border-color: var(--color-border-strong);
+  }
+
+  &:focus {
+    border-color: var(--tx-border-focus);
+    box-shadow: 0 0 0 3px var(--tx-ring);
+  }
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    background-color: var(--color-subtle);
+    resize: none;
+  }
+}
+
+// ─── Sizes ────────────────────────────────────────────────────────────────────
+
+.sm {
+  padding: 6px 10px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.md {
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.lg {
+  padding: 10px 16px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+// ─── Footer (hint + count) ────────────────────────────────────────────────────
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.hint {
+  font-size: 12px;
+  color: var(--tx-hint);
+  margin: 0;
+}
+
+.count {
+  font-size: 11px;
+  font-family: ui-monospace, monospace;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}

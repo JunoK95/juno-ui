@@ -9,16 +9,19 @@ export interface NavItem {
 export const navGeneral: NavItem[] = [
   { label: 'Introduction', path: '/intro' },
   { label: 'Get Started',  path: '/get-started' },
+  { label: 'Examples',     path: '/examples' },
 ]
 
 export const navInputs: NavItem[] = [
   { label: 'Button',   path: '/ui/button' },
   { label: 'Input',    path: '/ui/input' },
+  { label: 'Textbox',  path: '/ui/textbox' },
   { label: 'Select',   path: '/ui/select' },
   { label: 'Checkbox', path: '/ui/checkbox' },
   { label: 'Switch',   path: '/ui/switch' },
   { label: 'Dropdown',   path: '/ui/dropdown' },
   { label: 'DatePicker', path: '/ui/datepicker' },
+  { label: 'Calendar',   path: '/ui/calendar' },
   { label: 'Slider',     path: '/ui/slider' },
 ]
 

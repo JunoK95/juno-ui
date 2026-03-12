@@ -45,6 +45,39 @@
   color: var(--color-text);
 }
 
+// ─── Input wrap (icon positioning) ────────────────────────────────────────────
+
+.inputWrap {
+  position: relative;
+  width: 100%;
+}
+
+.iconSlot {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  color: var(--color-text-muted);
+
+  svg { display: block; }
+}
+
+.iconSlotLeft  { left: 10px; }
+.iconSlotRight { right: 10px; }
+
+.iconSlotBtn {
+  pointer-events: auto;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: color 0.12s ease;
+
+  &:hover { color: var(--color-text); }
+}
+
 // ─── Input ────────────────────────────────────────────────────────────────────
 
 $radius: 6px;
@@ -99,6 +132,20 @@ $transition: 0.15s ease;
   padding: 10px 16px;
   font-size: 16px;
   line-height: 1.5;
+}
+
+// ─── Icon padding overrides ───────────────────────────────────────────────────
+
+.withIconLeft {
+  &.sm { padding-left: 30px; }
+  &.md { padding-left: 34px; }
+  &.lg { padding-left: 42px; }
+}
+
+.withIconRight {
+  &.sm { padding-right: 30px; }
+  &.md { padding-right: 34px; }
+  &.lg { padding-right: 42px; }
 }
 
 // ─── Hint ─────────────────────────────────────────────────────────────────────

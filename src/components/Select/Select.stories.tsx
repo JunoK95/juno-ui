@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Select } from './Select'
 
@@ -40,6 +41,34 @@ export const Success: Story = {
 
 export const Disabled: Story = {
   args: { label: 'Role', disabled: true },
+}
+
+const multiOptions = [
+  { value: 'design',   label: 'Design' },
+  { value: 'frontend', label: 'Frontend' },
+  { value: 'backend',  label: 'Backend' },
+  { value: 'devops',   label: 'DevOps' },
+  { value: 'mobile',   label: 'Mobile' },
+  { value: 'security', label: 'Security' },
+]
+
+export const MultiSelect: Story = {
+  render: () => {
+    const [values, setValues] = useState<string[]>([])
+    return (
+      <div style={{ width: '280px' }}>
+        <Select
+          multiple
+          label="Tags"
+          hint={values.length > 0 ? `${values.length} selected` : 'Choose one or more tags.'}
+          options={multiOptions}
+          placeholder="Select tags…"
+          multiValue={values}
+          onMultiChange={setValues}
+        />
+      </div>
+    )
+  },
 }
 
 export const Sizes: Story = {
