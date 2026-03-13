@@ -107,7 +107,9 @@ $bp: 768px;
   color: var(--color-text-secondary);
   cursor: pointer;
   text-decoration: none;
-  transition: background-color 0.12s ease, color 0.12s ease;
+  transition:
+    background-color 0.12s ease,
+    color 0.12s ease;
 
   &:hover {
     background-color: var(--color-subtle);
@@ -163,7 +165,9 @@ $bp: 768px;
   background: transparent;
   color: var(--color-text-secondary);
   cursor: pointer;
-  transition: background-color 0.12s ease, color 0.12s ease;
+  transition:
+    background-color 0.12s ease,
+    color 0.12s ease;
 
   &:hover {
     background-color: var(--color-subtle);
@@ -184,7 +188,9 @@ $bp: 768px;
   background: var(--color-surface);
   color: var(--color-text-secondary);
   cursor: pointer;
-  transition: background-color 0.12s ease, color 0.12s ease;
+  transition:
+    background-color 0.12s ease,
+    color 0.12s ease;
   appearance: auto;
 
   &:hover {
@@ -213,7 +219,9 @@ $bp: 768px;
   background: var(--color-surface);
   color: var(--color-text-secondary);
   cursor: pointer;
-  transition: background-color 0.12s ease, color 0.12s ease;
+  transition:
+    background-color 0.12s ease,
+    color 0.12s ease;
 
   &:hover {
     background-color: var(--color-subtle);
@@ -230,16 +238,32 @@ $bp: 768px;
   }
 }
 
+.contentFull {
+  padding: 40px 40px 80px;
+
+  @media (max-width: $bp) {
+    padding: 28px 20px 60px;
+  }
+}
+
 // ─── Examples page ────────────────────────────────────────────────────────────
 
 .examplesGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 20px;
   align-items: start;
 
-  @media (max-width: $bp) {
-    grid-template-columns: 1fr;
+  @media (min-width: 640px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 1100px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1600px) {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -264,7 +288,11 @@ $bp: 768px;
   right: -60px;
   width: 560px;
   height: 560px;
-  background: radial-gradient(circle at 50% 40%, var(--color-primary-subtle), transparent 68%);
+  background: radial-gradient(
+    circle at 50% 40%,
+    var(--color-primary-subtle),
+    transparent 68%
+  );
   pointer-events: none;
   z-index: 0;
   opacity: 0.9;
@@ -353,7 +381,9 @@ $bp: 768px;
   border: 1px solid var(--color-border-strong);
   border-radius: 7px;
   text-decoration: none;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
 
   &:hover {
     background-color: var(--color-subtle);
@@ -392,9 +422,15 @@ $bp: 768px;
   padding: 6px 14px;
   border-radius: 999px;
   border: 1px solid var(--color-border);
-  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease,
+    background-color 0.15s ease;
 
-  svg { color: #e05c7a; flex-shrink: 0; }
+  svg {
+    color: #e05c7a;
+    flex-shrink: 0;
+  }
 
   &:hover {
     color: var(--color-text);
@@ -530,7 +566,10 @@ $bp: 768px;
   white-space: nowrap;
   flex-shrink: 0;
   margin-top: 4px;
-  transition: color 0.12s ease, border-color 0.12s ease, background-color 0.12s ease;
+  transition:
+    color 0.12s ease,
+    border-color 0.12s ease,
+    background-color 0.12s ease;
 
   &:hover {
     color: var(--color-text);
@@ -616,7 +655,9 @@ $bp: 768px;
   border: 1px solid var(--color-border);
   border-radius: 8px;
   text-decoration: none;
-  transition: border-color 0.12s ease, background 0.12s ease;
+  transition:
+    border-color 0.12s ease,
+    background 0.12s ease;
 
   &:hover {
     border-color: var(--color-border-strong);

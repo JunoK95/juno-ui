@@ -1,5 +1,5 @@
 import { useLayoutEffect, useState } from 'react'
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import type { Theme, Palette } from './nav'
 import { Sidebar } from './layout/Sidebar'
 import { Topbar } from './layout/Topbar'
@@ -40,6 +40,7 @@ import { TypographyPage }  from './pages/TypographyPage'
 import s from './App.module.scss'
 
 export default function App() {
+  const location = useLocation()
   const [theme, setTheme] = useState<Theme>(() =>
     window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
   )
@@ -71,7 +72,7 @@ export default function App() {
           onChangePalette={setPalette}
         />
 
-        <div className={s.content}>
+        <div className={location.pathname === '/examples' ? s.contentFull : s.content}>
           <Routes>
             <Route path="/"              element={<HomePage />} />
             <Route path="/intro"         element={<IntroPage />} />
