@@ -2,6 +2,10 @@
 
 A lightweight React component library with a token-based theme system, dark mode, and multiple color palettes.
 
+Built originally for my own projects — sharing it in the hope it helps others save time and build beautiful UIs too.
+
+If juno-ui saves you time, consider [buying me a coffee ☕](https://ko-fi.com/junok) — it's free and open source, built in spare time.
+
 ## Installation
 
 ```sh
