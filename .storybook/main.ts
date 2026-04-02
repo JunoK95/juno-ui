@@ -10,7 +10,7 @@ const config: StorybookConfig = {
   viteFinal(config) {
     return mergeConfig(config, {
       build: {
-        chunkSizeWarningLimit: 1000,
+        chunkSizeWarningLimit: 1500,
         rollupOptions: {
           output: {
             manualChunks: (id: string) => {
