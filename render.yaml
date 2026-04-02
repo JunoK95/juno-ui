@@ -9,3 +9,10 @@ services:
       - type: rewrite
         source: /*
         destination: /index.html
+
+  - type: web
+    name: juno-ui-storybook
+    env: static
+    buildCommand: npm install && npm run build-storybook
+    staticPublishPath: ./storybook-static
+    pullRequestPreviewsEnabled: true
