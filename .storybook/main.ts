@@ -8,6 +8,9 @@ const config: StorybookConfig = {
     options: {},
   },
   viteFinal(config) {
+    config.plugins = (config.plugins ?? []).filter(
+      (p) => !(p && typeof p === 'object' && 'name' in p && p.name === 'vite:dts')
+    )
     return mergeConfig(config, {
       build: {
         chunkSizeWarningLimit: 1500,
