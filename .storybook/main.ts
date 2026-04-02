@@ -1,3 +1,4 @@
+import { mergeConfig } from 'vite'
 import type { StorybookConfig } from '@storybook/react-vite'
 
 const config: StorybookConfig = {
@@ -7,20 +8,23 @@ const config: StorybookConfig = {
     options: {},
   },
   viteFinal(config) {
-    config.build ??= {}
-    config.build.rollupOptions ??= {}
-    config.build.rollupOptions.output ??= {}
-    if (!Array.isArray(config.build.rollupOptions.output)) {
-      config.build.rollupOptions.output.manualChunks = (id) => {
-        if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
-          return 'react-vendor'
-        }
-        if (id.includes('node_modules')) {
-          return 'vendor'
-        }
-      }
-    }
-    return config
+    return mergeConfig(config, {
+      build: {
+        chunkSizeWarningLimit: 1000,
+        rollupOptions: {
+          output: {
+            manualChunks: (id: string) => {
+              if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
+                return 'react-vendor'
+              }
+              if (id.includes('node_modules')) {
+                return 'vendor'
+              }
+            },
+          },
+        },
+      },
+    })
   },
 }
 
