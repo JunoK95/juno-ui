@@ -4,17 +4,19 @@ import { resolve } from 'path'
 import dts from 'vite-plugin-dts'
 import cssInjectedByJs from 'vite-plugin-css-injected-by-js'
 
+const isStorybook = process.env.STORYBOOK === 'true'
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-    dts({
+    !isStorybook && dts({
       include: ['src'],
       exclude: ['src/main.tsx', 'src/App.tsx'],
       tsconfigPath: './tsconfig.app.json',
       rollupTypes: true,
     }),
-    cssInjectedByJs(),
+    !isStorybook && cssInjectedByJs(),
   ],
   build: {
     lib: {

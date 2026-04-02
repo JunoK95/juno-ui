@@ -8,8 +8,9 @@ const config: StorybookConfig = {
     options: {},
   },
   viteFinal(config) {
+    const blockedPlugins = new Set(['vite:dts', 'vite-plugin-css-injected-by-js'])
     config.plugins = (config.plugins ?? []).filter(
-      (p) => !(p && typeof p === 'object' && 'name' in p && p.name === 'vite:dts')
+      (p) => !(p && typeof p === 'object' && 'name' in p && blockedPlugins.has(p.name as string))
     )
     return mergeConfig(config, {
       build: {
