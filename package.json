@@ -25,7 +25,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "preview:site": "vite preview --config vite.site.config.ts",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "STORYBOOK=true storybook dev -p 6006",
     "build-storybook": "STORYBOOK=true storybook build",
     "test": "jest",
     "test:watch": "jest --watch"
