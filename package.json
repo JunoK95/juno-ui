@@ -11,7 +11,8 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/juno-ui-library.js",
       "require": "./dist/juno-ui-library.umd.cjs"
-    }
+    },
+    "./dist/juno-ui-library.css": "./dist/juno-ui-library.css"
   },
   "files": [
     "dist"
