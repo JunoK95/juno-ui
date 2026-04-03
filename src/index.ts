@@ -1,2 +1,2 @@
-import './styles/_tokens.scss'
+import './styles/theme.scss'
 export * from './components'

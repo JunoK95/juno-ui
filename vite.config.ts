@@ -2,7 +2,6 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
 import dts from 'vite-plugin-dts'
-import cssInjectedByJs from 'vite-plugin-css-injected-by-js'
 
 const isStorybook = process.env.STORYBOOK === 'true'
 
@@ -16,7 +15,6 @@ export default defineConfig({
       tsconfigPath: './tsconfig.app.json',
       rollupTypes: true,
     }),
-    !isStorybook && cssInjectedByJs(),
   ],
   build: {
     lib: {
