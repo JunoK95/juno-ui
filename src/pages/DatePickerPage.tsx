@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { DatePicker } from '../index'
+import { DatePicker, Modal, Button } from '../index'
 import { PageHeader } from '../layout/PageHeader'
 import s from '../App.module.scss'
 
@@ -7,6 +7,8 @@ export function DatePickerPage() {
   const [date, setDate]         = useState<Date | null>(null)
   const [datetime, setDatetime] = useState<Date | null>(null)
   const [limited, setLimited]   = useState<Date | null>(null)
+  const [modalOpen, setModalOpen] = useState(false)
+  const [modalDate, setModalDate] = useState<Date | null>(null)
 
   const min = new Date(); min.setDate(min.getDate() - 3)
   const max = new Date(); max.setDate(max.getDate() + 14)
@@ -50,6 +52,23 @@ export function DatePickerPage() {
             max={max}
           />
         </div>
+      </div>
+
+      <div className={s.section}>
+        <p className={s.sectionTitle}>Inside a Modal</p>
+        <div className={s.canvas}>
+          <Button onClick={() => setModalOpen(true)}>Open modal</Button>
+        </div>
+        <Modal open={modalOpen} onClose={() => setModalOpen(false)} title="Schedule event">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+            <DatePicker value={modalDate} onChange={setModalDate} label="Event date" />
+            <DatePicker mode="datetime" value={modalDate} onChange={setModalDate} label="Event date & time" />
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 8, marginTop: 24 }}>
+            <Button variant="ghost" onClick={() => setModalOpen(false)}>Cancel</Button>
+            <Button onClick={() => setModalOpen(false)}>Save</Button>
+          </div>
+        </Modal>
       </div>
 
       <div className={s.section}>
