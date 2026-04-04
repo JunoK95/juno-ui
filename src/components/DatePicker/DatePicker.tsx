@@ -92,8 +92,20 @@ export function DatePicker({
 
   function measure() {
     if (!triggerRef.current) return
-    const r = triggerRef.current.getBoundingClientRect()
-    setPos({ top: r.bottom + 5, left: r.left })
+    const r      = triggerRef.current.getBoundingClientRect()
+    const vw     = window.innerWidth
+    const vh     = window.innerHeight
+    const gap    = 5
+    const popW   = 280
+    const popH   = mode === 'datetime' ? 380 : 310
+
+    const top    = r.bottom + gap + popH > vh && r.top - gap - popH >= 0
+                     ? r.top - gap - popH   // flip upward
+                     : r.bottom + gap        // default: below
+
+    const left   = Math.min(r.left, vw - popW - gap)
+
+    setPos({ top, left })
   }
 
   useEffect(() => {

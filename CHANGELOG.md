@@ -4,6 +4,14 @@ All notable component changes to juno-ui-library are documented here.
 
 ---
 
+## [0.4.3] — 2026-04-04
+
+### Fixed
+- **DatePicker** — popover now flips upward when there isn't enough space below the trigger, and clamps left when it would overflow the right edge of the viewport.
+- **DatePicker** — popover z-index raised to 9999 so it always renders above any ancestor stacking context.
+
+---
+
 ## [0.4.2] — 2026-04-04
 
 ### Fixed

@@ -7,8 +7,10 @@ export function DatePickerPage() {
   const [date, setDate]         = useState<Date | null>(null)
   const [datetime, setDatetime] = useState<Date | null>(null)
   const [limited, setLimited]   = useState<Date | null>(null)
-  const [modalOpen, setModalOpen] = useState(false)
-  const [modalDate, setModalDate] = useState<Date | null>(null)
+  const [modalOpen, setModalOpen]   = useState(false)
+  const [modalDate, setModalDate]   = useState<Date | null>(null)
+  const [edgeTest,  setEdgeTest]    = useState(false)
+  const [edgeDates, setEdgeDates]   = useState<(Date | null)[]>([null, null, null, null])
 
   const min = new Date(); min.setDate(min.getDate() - 3)
   const max = new Date(); max.setDate(max.getDate() + 14)
@@ -69,6 +71,35 @@ export function DatePickerPage() {
             <Button onClick={() => setModalOpen(false)}>Save</Button>
           </div>
         </Modal>
+      </div>
+
+      <div className={s.section}>
+        <p className={s.sectionTitle}>Viewport edge overflow</p>
+        <div className={s.canvas}>
+          <Button variant={edgeTest ? 'outline' : 'solid'} onClick={() => setEdgeTest(v => !v)}>
+            {edgeTest ? 'Hide edge pickers' : 'Show edge pickers'}
+          </Button>
+        </div>
+        {edgeTest && (
+          <>
+            {/* Top-left — popover opens below, aligned left (baseline) */}
+            <div style={{ position: 'fixed', top: 12, left: 12, zIndex: 500 }}>
+              <DatePicker label="↘ Top-left" value={edgeDates[0]} onChange={d => setEdgeDates(v => { const n=[...v]; n[0]=d; return n })} />
+            </div>
+            {/* Top-right — should clamp left */}
+            <div style={{ position: 'fixed', top: 12, right: 12, zIndex: 500 }}>
+              <DatePicker label="↙ Top-right" value={edgeDates[1]} onChange={d => setEdgeDates(v => { const n=[...v]; n[1]=d; return n })} />
+            </div>
+            {/* Bottom-left — should flip upward */}
+            <div style={{ position: 'fixed', bottom: 12, left: 12, zIndex: 500 }}>
+              <DatePicker label="↗ Bottom-left" value={edgeDates[2]} onChange={d => setEdgeDates(v => { const n=[...v]; n[2]=d; return n })} />
+            </div>
+            {/* Bottom-right — should flip upward AND clamp left */}
+            <div style={{ position: 'fixed', bottom: 12, right: 12, zIndex: 500 }}>
+              <DatePicker label="↖ Bottom-right" value={edgeDates[3]} onChange={d => setEdgeDates(v => { const n=[...v]; n[3]=d; return n })} />
+            </div>
+          </>
+        )}
       </div>
 
       <div className={s.section}>
