@@ -4,6 +4,13 @@ All notable component changes to juno-ui-library are documented here.
 
 ---
 
+## [0.4.2] — 2026-04-04
+
+### Fixed
+- **Select** — multi-select trigger right padding now correctly accounts for the chevron across all sizes (same fix applied to single-select in 0.4.1).
+
+---
+
 ## [0.4.1] — 2026-04-04
 
 ### Fixed
