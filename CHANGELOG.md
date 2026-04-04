@@ -4,6 +4,14 @@ All notable component changes to juno-ui-library are documented here.
 
 ---
 
+## [0.4.1] — 2026-04-04
+
+### Fixed
+- **DatePicker** — calendar popup now renders above modals (z-index bumped above modal overlay).
+- **Select** — right padding increased per size so the chevron no longer overlaps long option text.
+
+---
+
 ## [0.4.0] — 2026-04-04
 
 ### Fixed
