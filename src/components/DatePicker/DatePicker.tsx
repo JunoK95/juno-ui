@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import styles from './DatePicker.module.scss'
 
 export type DatePickerMode = 'date' | 'datetime'
@@ -84,21 +85,36 @@ export function DatePicker({
   const [viewMonth, setViewMonth] = useState(value?.getMonth()     ?? today.getMonth())
   const [hours,   setHours]   = useState(value?.getHours()   ?? 12)
   const [minutes, setMinutes] = useState(value?.getMinutes() ?? 0)
-  const ref = useRef<HTMLDivElement>(null)
+  const ref        = useRef<HTMLDivElement>(null)
+  const triggerRef = useRef<HTMLButtonElement>(null)
+  const popoverRef = useRef<HTMLDivElement>(null)
+  const [pos, setPos] = useState<{ top: number; left: number } | null>(null)
+
+  function measure() {
+    if (!triggerRef.current) return
+    const r = triggerRef.current.getBoundingClientRect()
+    setPos({ top: r.bottom + 5, left: r.left })
+  }
 
   useEffect(() => {
     if (!open) return
     function onMousedown(e: MouseEvent) {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
+      const t = e.target as Node
+      if (ref.current?.contains(t) || popoverRef.current?.contains(t)) return
+      setOpen(false)
     }
     function onKeydown(e: KeyboardEvent) {
       if (e.key === 'Escape') setOpen(false)
     }
     document.addEventListener('mousedown', onMousedown)
     document.addEventListener('keydown',   onKeydown)
+    window.addEventListener('resize',      measure)
+    window.addEventListener('scroll',      measure, true)
     return () => {
       document.removeEventListener('mousedown', onMousedown)
       document.removeEventListener('keydown',   onKeydown)
+      window.removeEventListener('resize',      measure)
+      window.removeEventListener('scroll',      measure, true)
     }
   }, [open])
 
@@ -143,9 +159,10 @@ export function DatePicker({
       {label && <span className={styles.label}>{label}</span>}
 
       <button
+        ref={triggerRef}
         type="button"
         className={triggerCls}
-        onClick={() => !disabled && setOpen(o => !o)}
+        onClick={() => { if (!disabled) { if (!open) measure(); setOpen(o => !o) } }}
         disabled={disabled}
         aria-haspopup="dialog"
         aria-expanded={open}
@@ -172,8 +189,8 @@ export function DatePicker({
         )}
       </button>
 
-      {open && (
-        <div className={styles.popover} role="dialog" aria-label="Date picker">
+      {open && pos && createPortal(
+        <div ref={popoverRef} className={styles.popover} style={{ top: pos.top, left: pos.left }} role="dialog" aria-label="Date picker">
 
           {/* ── Month navigation ── */}
           <div className={styles.header}>
@@ -261,7 +278,8 @@ export function DatePicker({
             <button className={styles.footerBtnPrimary} onClick={() => setOpen(false)}>Done</button>
           </div>
 
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   )

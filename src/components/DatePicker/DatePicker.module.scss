@@ -4,7 +4,6 @@
   display: inline-flex;
   flex-direction: column;
   gap: 5px;
-  position: relative;
 }
 
 // ─── Label ────────────────────────────────────────────────────────────────────
@@ -104,10 +103,8 @@
 // ─── Popover ──────────────────────────────────────────────────────────────────
 
 .popover {
-  position: absolute;
-  top: calc(100% + 5px);
-  left: 0;
-  z-index: 300;
+  position: fixed;
+  z-index: 1000;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 10px;

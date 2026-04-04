@@ -58,7 +58,7 @@ export function HomePage() {
     <div className={s.home}>
       <div className={s.homeGlow} aria-hidden="true" />
 
-      <span className={s.homeBadge}>v0.2.0</span>
+      <span className={s.homeBadge}>v0.4.0</span>
       <h1 className={s.homeTitle}>juno-ui</h1>
       <p className={s.homeSubtitle}>
         A minimal, themeable React component library built with CSS custom
